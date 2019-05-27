@@ -43,13 +43,13 @@
 	</bean> 
 	<!-- 以下为shiro需要的配置项 -->
 	<!-- 定义Realm，但是名称一定要注意好 -->
-	<bean id="memberRealm" class="cn.mldn.realm.MemberRealm">
+	<bean id="memberRealm" class="cn.zkw.realm.MemberRealm">
 		<property name="credentialsMatcher">
-			<bean class="cn.mldn.realm.cre.CustomerCredentialsMatcher"/>
+			<bean class="cn.zkw.realm.cre.CustomerCredentialsMatcher"/>
 		</property>
 	</bean>
 	<!-- 此处表示使用内置的表单登录控制验证 -->
-	<bean id="formAuthenticationFilter" class="cn.mldn.action.filter.CustomerFormAuthenticationFilter">
+	<bean id="formAuthenticationFilter" class="cn.zkw.action.filter.CustomerFormAuthenticationFilter">
 		<!-- 定义出需要使用的参数，此参数与表单一一对应 -->
 		<property name="usernameParam" value="mid"/>
 		<property name="passwordParam" value="password"/>

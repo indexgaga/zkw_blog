@@ -20,7 +20,7 @@
 		<mvc:interceptor>	<!-- 定义某一个具体的拦截器 -->
 			<mvc:mapping path="/admin/**/*.action"/>	<!-- 该拦截器针对于所有路径下的action -->
 			<!-- 定义该拦截器使用的拦截器处理程序类，必须是HandlerInterceptor子类 -->
-			<bean class="cn.mldn.util.validate.ValidationInterceptor"/>
+			<bean class="cn.zkw.util.validate.ValidationInterceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors>  
 	

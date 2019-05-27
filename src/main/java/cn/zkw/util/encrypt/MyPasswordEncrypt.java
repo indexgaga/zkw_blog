@@ -1,6 +1,6 @@
 package cn.zkw.util.encrypt;
 
-import cn.mldn.util.MD5Code;
+import cn.zkw.util.MD5Code;
 
 public class MyPasswordEncrypt {
 	private static final String SALT = "bWxkbmphdmE=";

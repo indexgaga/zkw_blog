@@ -65,12 +65,12 @@
 	<!-- 表示要进行安全访问的路径资源匹配处理 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<!-- 匹配前缀 -->
-		<property name="prefix" value="/WEB-INF/pages/"/>
+		<property name="prefix" value="/WEB-INF/front/"/>
 		<!-- 匹配处理的后缀 -->
 		<property name="suffix" value=".jsp"/>
 	</bean>
 	<context:annotation-config/>
-	<context:component-scan base-package="cn.zkw.action,cn.zkw.action.shiro"/>
+	<context:component-scan base-package="cn.zkw.controller"/>
 	<mvc:annotation-driven />			<!-- 启动Spring MVC的注解配置 -->
 	<mvc:default-servlet-handler/>		<!-- 启用处理请求的servlet -->
 </beans>

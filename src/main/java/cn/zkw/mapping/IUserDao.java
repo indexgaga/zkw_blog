@@ -1,5 +1,7 @@
 package cn.zkw.mapping;
 
-public interface IUserDao {
+import cn.zkw.vo.User;
 
+public interface IUserDao {
+    User findUserByName(String user_name);
 }

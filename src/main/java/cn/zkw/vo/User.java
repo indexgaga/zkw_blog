@@ -17,6 +17,15 @@ public class User implements Serializable {
     private Integer user_age;
     private Integer user_telephone_number; //电话
     private String user_nickname; //用户昵称
+    private Integer user_lock;
+
+    public Integer getUser_lock() {
+        return user_lock;
+    }
+
+    public void setUser_lock(Integer user_lock) {
+        this.user_lock = user_lock;
+    }
 
     public Integer getUser_id() {
         return user_id;

@@ -18,9 +18,9 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 
-import cn.mldn.singup.service.back.IMemberServiceBack;
-import cn.mldn.singup.vo.Member;
-import cn.mldn.util.encrypt.MyPasswordEncrypt;
+import cn.zkw.service.back.IMemberServiceBack;
+import cn.zkw.vo.Member;
+import cn.zkw.util.encrypt.MyPasswordEncrypt;
 
 public class MemberRealm extends AuthorizingRealm {
 	private Logger log = Logger.getLogger(MemberRealm.class);

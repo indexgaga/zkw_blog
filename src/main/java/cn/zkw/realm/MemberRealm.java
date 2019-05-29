@@ -8,12 +8,7 @@ import javax.annotation.Resource;
 import cn.zkw.service.UserService;
 import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.AuthenticationInfo;
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.authc.IncorrectCredentialsException;
-import org.apache.shiro.authc.SimpleAuthenticationInfo;
-import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
@@ -57,13 +52,16 @@ public class MemberRealm extends AuthorizingRealm {
 		if (vo == null) {
 			throw new UnknownAccountException("该用户名称不存在！");
 		} else if (vo.getUser_lock() == null || vo.getUser_lock().equals(1)) {
-			throw new UnknownAccountException("该用户已经被锁定了！");
+//			throw new UnknownAccountException("该用户已经被锁定了！");
+			throw new LockedAccountException("账户已经被锁定");
 		} else { // 进行密码的验证处理
-			String password = MyPasswordEncrypt.encryptPassword(new String((char[]) token.getCredentials()));
+			String password = new String((char[]) token.getCredentials());
 			// 将数据库中的密码与输入的密码进行比较，这样就可以确定当前用户是否可以正常登录
+			System.out.println(vo.getUser_password().equals(password));
 			if (vo.getUser_password().equals(password)) { // 密码正确
 				AuthenticationInfo auth = new SimpleAuthenticationInfo(username, password, "memberRealm");
-				SecurityUtils.getSubject().getSession().setAttribute("name", vo.getUser_name());
+				SecurityUtils.getSubject().getSession().setAttribute("name", vo.getUser_nickname());
+				SecurityUtils.getSubject().getSession().setAttribute("photo",vo.getUser_photo());
 				return auth;
 			} else {
 				throw new IncorrectCredentialsException("密码错误！");

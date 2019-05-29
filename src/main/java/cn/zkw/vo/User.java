@@ -1,8 +1,10 @@
 package cn.zkw.vo;
 
+import org.springframework.stereotype.Component;
+
 import java.io.Serializable;
 import java.util.Date;
-
+@Component
 public class User implements Serializable {
     private Integer user_id;
     private String user_ip;

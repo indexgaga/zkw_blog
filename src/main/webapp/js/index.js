@@ -31,7 +31,9 @@ $(function () {
             contentType : false,
             type : 'post',
             success : function (result) {
-                window.location.href="index";
+                if(result.code==200){
+                    window.location.href="index";
+                }
                 alert(result.msg);
             },
             error : function (result) {

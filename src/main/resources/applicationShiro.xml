@@ -44,9 +44,9 @@
 	<!-- 以下为shiro需要的配置项 -->
 	<!-- 定义Realm，但是名称一定要注意好 -->
 	<bean id="memberRealm" class="cn.zkw.realm.MemberRealm">
-		<!--<property name="credentialsMatcher">-->
-			<!--<bean class="cn.zkw.realm.cre.CustomerCredentialsMatcher"/>-->
-		<!--</property>-->
+		<property name="credentialsMatcher">
+			<bean class="cn.zkw.realm.cre.CustomerCredentialsMatcher"/>
+		</property>
 	</bean>
 	<!-- 此处表示使用内置的表单登录控制验证 -->
 	<!--<bean id="formAuthenticationFilter" class="cn.zkw.action.filter.CustomerFormAuthenticationFilter">-->

@@ -25,10 +25,10 @@
 		<property name="jdbcUrl" value="${db.url}" /><!-- 连接地址 -->
 		<property name="user" value="${db.user}" />	<!-- 用户名 -->
 		<property name="password" value="${db.password}" />	<!-- 密码 -->
-		<property name="maxPoolSize" value="${pool.max}" />	<!-- 最大的可用连接数 -->
-		<property name="minPoolSize" value="${pool.min}" />	<!-- 最小维持的连接数 -->
+		<property name="maxPoolSize" value="50" />	<!-- 最大的可用连接数 -->
+		<property name="minPoolSize" value="5" />	<!-- 最小维持的连接数 -->
 		<property name="initialPoolSize" value="${pool.init}" />	<!-- 初始化连接数 -->
-		<property name="maxIdleTime" value="${pool.idle}" />	<!-- 最大等待连接 -->
+		<property name="maxIdleTime" value="5" />	<!-- 最大等待连接 -->
 	</bean> 
 	<bean id="transactionManager" 
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
@@ -82,7 +82,7 @@
 	</tx:advice>
 	<!-- 定义事务的处理切入点 -->
 	<aop:config expose-proxy="true">
-		<aop:pointcut expression="execution(* cn.zkw..service..*.*(..))" id="pointcut"/>
+		<aop:pointcut expression="execution(* cn.zkw.service..*.*(..))" id="pointcut"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut"/>
 	</aop:config>
 

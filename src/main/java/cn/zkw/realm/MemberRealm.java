@@ -47,6 +47,7 @@ public class MemberRealm extends AuthorizingRealm {
 		log.info("********** 1、用户登录认证：doGetAuthenticationInfo() **********");
 		// 1、登录认证的方法需要先执行，需要用他来判断登录的用户信息是否合法
 		String username = (String) token.getPrincipal(); // 取得用户名
+		System.out.println(username);
 		// 需要通过用户名取得用户的完整信息，利用业务层操作
 		User vo =  this.service.findUserByName(username);	// 根据后台业务查询用户的完整数据
 		if (vo == null) {
@@ -55,7 +56,7 @@ public class MemberRealm extends AuthorizingRealm {
 //			throw new UnknownAccountException("该用户已经被锁定了！");
 			throw new LockedAccountException("账户已经被锁定");
 		} else { // 进行密码的验证处理
-			String password = new String((char[]) token.getCredentials());
+			String password = MyPasswordEncrypt.encryptPassword(new String((char[]) token.getCredentials()));
 			// 将数据库中的密码与输入的密码进行比较，这样就可以确定当前用户是否可以正常登录
 			System.out.println(vo.getUser_password().equals(password));
 			if (vo.getUser_password().equals(password)) { // 密码正确

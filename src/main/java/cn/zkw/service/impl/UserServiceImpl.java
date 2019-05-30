@@ -15,4 +15,8 @@ public class UserServiceImpl implements UserService {
     public User findUserByName(String user_name) {
         return dao.findUserByName(user_name);
     }
+
+    public boolean userAdd(User user){
+        return dao.userAdd(user)>=1;
+    }
 }

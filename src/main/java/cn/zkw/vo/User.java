@@ -12,11 +12,10 @@ public class User implements Serializable {
     private String user_password;
     private String user_email;
     private String user_photo;
-    private String user_level;
-    private String user_rights; //用户权限
+    private Integer user_level;
+    private Integer user_rights; //用户权限,0为普通用户,1为1级会员
     private Date user_registration_time; //注册日期
     private Date user_birthday;
-    private Integer user_age;
     private Integer user_telephone_number; //电话
     private String user_nickname; //用户昵称
     private Integer user_lock;
@@ -77,19 +76,19 @@ public class User implements Serializable {
         this.user_photo = user_photo;
     }
 
-    public String getUser_level() {
+    public Integer getUser_level() {
         return user_level;
     }
 
-    public void setUser_level(String user_level) {
+    public void setUser_level(Integer user_level) {
         this.user_level = user_level;
     }
 
-    public String getUser_rights() {
+    public Integer getUser_rights() {
         return user_rights;
     }
 
-    public void setUser_rights(String user_rights) {
+    public void setUser_rights(Integer user_rights) {
         this.user_rights = user_rights;
     }
 
@@ -107,14 +106,6 @@ public class User implements Serializable {
 
     public void setUser_birthday(Date user_birthday) {
         this.user_birthday = user_birthday;
-    }
-
-    public Integer getUser_age() {
-        return user_age;
-    }
-
-    public void setUser_age(Integer user_age) {
-        this.user_age = user_age;
     }
 
     public Integer getUser_telephone_number() {
@@ -146,7 +137,6 @@ public class User implements Serializable {
                 ", user_rights='" + user_rights + '\'' +
                 ", user_registration_time=" + user_registration_time +
                 ", user_birthday=" + user_birthday +
-                ", user_age=" + user_age +
                 ", user_telephone_number=" + user_telephone_number +
                 ", user_nickname='" + user_nickname + '\'' +
                 '}';

@@ -47,7 +47,7 @@
           </li>
         </ul>
         <c:if test="${name==null}"><a data-toggle="modal" data-target="#loginModal" class="login" rel="nofollow">Hi,请登录</a></c:if>
-        <c:if test="${name!=null}">欢迎您_<a href="" style="color: #4CC3FF">${name}</a>&nbsp;&nbsp;&nbsp;<a href="loginOut">注销</a></c:if>
+        <c:if test="${name!=null}">欢迎您_<a href="" style="color: #4CC3FF">${name}</a>&nbsp;&nbsp;&nbsp;<a id="loginOut">注销</a></c:if>
         &nbsp;&nbsp;<a href="javascript:;" class="register" rel="nofollow">我要注册</a>&nbsp;&nbsp;<a href="" rel="nofollow">找回密码</a> </div>
 
       <div class="navbar-header">

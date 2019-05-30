@@ -137,7 +137,7 @@
     <location>/unauthUrl.action</location>
   </error-page>
   <welcome-file-list>
-    <welcome-file>index</welcome-file>
+    <welcome-file>./WEB-INF/front/index.jsp</welcome-file>
     <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>default.html</welcome-file>

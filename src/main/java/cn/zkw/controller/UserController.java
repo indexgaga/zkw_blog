@@ -17,11 +17,30 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class UserController extends AbstractAction {
     @Resource
     UserService service;
+
+    @RequestMapping(value = "/user",method = RequestMethod.POST)
+
+    @RequestMapping(value = "/loginOut",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
+    public @ResponseBody Object loginOut(HttpServletRequest request)throws Exception{
+        request.getSession().setAttribute("name",null);
+        request.getSession().setAttribute("photo",null);
+        JSONObject jsonObject = new JSONObject();
+        try {
+            SecurityUtils.getSubject().logout();
+        }catch (Exception e){
+            jsonObject.put("msg","注销失败");
+            jsonObject.put("code",202);
+        }
+        jsonObject.put("msg","注销成功");
+        jsonObject.put("code",200);
+        return jsonObject;
+    }
 
     @RequestMapping(value = "/login",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     public @ResponseBody

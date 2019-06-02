@@ -12,11 +12,11 @@ public class UserServiceImpl implements UserService {
     IUserDao dao;
 
     @Override
-    public User findUserByName(String user_name) {
+    public User getUserByName(String user_name) {
         return dao.findUserByName(user_name);
     }
 
-    public boolean userAdd(User user){
-        return dao.userAdd(user)>=1;
+    public boolean addUser(User user){
+        return dao.addUser(user)>=1;
     }
 }

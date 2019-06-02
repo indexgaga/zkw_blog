@@ -65,7 +65,7 @@
 	<!-- 表示要进行安全访问的路径资源匹配处理 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<!-- 匹配前缀 -->
-		<property name="prefix" value="/WEB-INF/front/"/>
+		<property name="prefix" value="/WEB-INF/"/>
 		<!-- 匹配处理的后缀 -->
 		<property name="suffix" value=".jsp"/>
 	</bean>

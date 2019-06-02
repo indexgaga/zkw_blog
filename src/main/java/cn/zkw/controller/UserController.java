@@ -14,7 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -25,27 +25,46 @@ public class UserController extends AbstractAction {
     @Resource
     UserService service;
 
-    @RequestMapping(value = "/user", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/registGetUser",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
+    public Object registGetUser(String user_name){
+        JSONObject jsonObject = new JSONObject();
+        if(service.getUserByName(user_name)!=null){
+            jsonObject.put("code",200);
+            jsonObject.put("msg","账号已存在");
+        }else{
+            jsonObject.put("code",201);
+        }
+        return jsonObject;
+    }
+
+
+    @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     public @ResponseBody
-    Object userAdd(User user, MultipartFile photo, HttpServletRequest request) throws Exception {
+    Object addUser(User user, HttpServletRequest request) throws Exception {
         System.out.println(request.getRemoteAddr());
-        String time_photo_name = super.createFileName(photo); //图片名称UUID
+        System.out.println(user);
+        ModelAndView modelAndView = new ModelAndView("front/tip");
         user.setUser_lock(0); //用户默认不锁定
         user.setUser_level(1); //用户默认等级为一级
         user.setUser_ip(request.getRemoteAddr());  //ip
-        user.setUser_photo(time_photo_name);  //头像名称
+        user.setUser_photo("nophoto.png");  //头像名称
         user.setUser_registration_time(new Date()); //注册时间
         user.setUser_rights(1);  //默认权限为一，，表示不是会员
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("code",201);
-        jsonObject.put("msg","注册失败，请检查格式");
-        if (service.userAdd(user)) {
-            if(super.saveFile(photo,time_photo_name,request)){
-                jsonObject.put("code",200);
-                jsonObject.put("msg","注册成功");
+
+        if (service.getUserByName(user.getUser_name())==null) {
+            if (service.addUser(user)){
+                modelAndView.addObject("msg","注册成功！");
+                modelAndView.addObject("url","index");
+                return modelAndView;
+            }else{
+                modelAndView.addObject("msg","出现异常,注册失败，请联系管理员！");
+                modelAndView.addObject("url","userAdd");
             }
+        }else{
+            modelAndView.addObject("msg","注册失败，账号已存在！");
+            modelAndView.addObject("url","userAdd");
         }
-        return jsonObject;
+        return modelAndView;
     }
 
     @RequestMapping(value = "/loginOut", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
@@ -61,6 +80,7 @@ public class UserController extends AbstractAction {
             jsonObject.put("code", 202);
         }
         jsonObject.put("msg", "注销成功");
+        jsonObject.put("url","index");
         jsonObject.put("code", 200);
         return jsonObject;
     }
@@ -72,7 +92,7 @@ public class UserController extends AbstractAction {
         json.put("code", 200);
         json.put("msg", "登陆成功");
         System.out.println("username=" + user.getUser_name());
-//        User vo = service.findUserByName(user.getUser_name());
+//        User vo = service.getUserByName(user.getUser_name());
         System.out.println(user);
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(user.getUser_name(), user.getUser_password());
@@ -91,6 +111,16 @@ public class UserController extends AbstractAction {
             e.printStackTrace();
         }
         return json;
+    }
+
+    @RequestMapping("userAdd")
+    public String userAdd(){
+        return "front/userAdd";
+    }
+
+    @RequestMapping("index")
+    public String index(){
+        return "front/index";
     }
 
     @Override

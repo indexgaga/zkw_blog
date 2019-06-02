@@ -1,8 +1,5 @@
 package cn.zkw.realm;
 
-import java.util.Map;
-import java.util.Set;
-
 import javax.annotation.Resource;
 
 import cn.zkw.service.UserService;
@@ -10,7 +7,6 @@ import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
-import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 
@@ -49,7 +45,7 @@ public class MemberRealm extends AuthorizingRealm {
 		String username = (String) token.getPrincipal(); // 取得用户名
 		System.out.println(username);
 		// 需要通过用户名取得用户的完整信息，利用业务层操作
-		User vo =  this.service.findUserByName(username);	// 根据后台业务查询用户的完整数据
+		User vo =  this.service.getUserByName(username);	// 根据后台业务查询用户的完整数据
 		if (vo == null) {
 			throw new UnknownAccountException("该用户名称不存在！");
 		} else if (vo.getUser_lock() == null || vo.getUser_lock().equals(1)) {

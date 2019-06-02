@@ -100,11 +100,11 @@ $("#gotop").click(function () {
  
 //图片延时加载
 $("img.thumb").lazyload({
-    placeholder: "/Home/images/occupying.png",
+    placeholder: "<%=request.getContextPath()%>/images/occupying.png",
     effect: "fadeIn"
 });
 $(".single .content img").lazyload({
-    placeholder: "/Home/images/occupying.png",
+    placeholder: "<%=request.getContextPath()%>/images/occupying.png",
     effect: "fadeIn"
 });
  
@@ -125,11 +125,11 @@ jQuery.ias({
 	pagination: '.pagination',
 	next: '.next-page a',
 	trigger: '查看更多',
-	loader: '<div class="pagination-loading"><img src="/Home/images/loading.gif" /></div>',
+	loader: '<div class="pagination-loading"><img src="<%=request.getContextPath()%>/images/loading.gif" /></div>',
 	triggerPageThreshold: 5,
 	onRenderComplete: function() {
 		$('.excerpt .thumb').lazyload({
-			placeholder: '/Home/images/occupying.png',
+			placeholder: '<%=request.getContextPath()%>/images/occupying.png',
 			threshold: 400
 		});
 		$('.excerpt img').attr('draggable','false');
@@ -244,7 +244,7 @@ $(function(){
 function replace_em(str){
 	str = str.replace(/\</g,'&lt;');
 	str = str.replace(/\>/g,'&gt;');
-	str = str.replace(/\[em_([0-9]*)\]/g,'<img src="/Home/images/arclist/$1.gif" border="0" />');
+	str = str.replace(/\[em_([0-9]*)\]/g,'<img src="<%=request.getContextPath()%>/images/arclist/$1.gif" border="0" />');
 	return str;
 }
 

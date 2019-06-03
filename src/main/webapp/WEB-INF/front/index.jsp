@@ -62,11 +62,11 @@
       </article>
       <div class="title">
         <h3>最新发布</h3>
-        <div class="more"><a href="">PHP</a><a href="">JavaScript</a><a href="">EmpireCMS</a><a href="">Apache</a><a href="">MySQL</a></div>
+        <div class="more"><a href="">java</a><a href="">JavaScript</a><a href="">EmpireCMS</a><a href="">Apache</a><a href="">MySQL</a></div>
       </div>
       <article class="excerpt excerpt-1"><a class="focus" href="article.jsp" title=""><img class="thumb" data-original="<%=request.getContextPath()%>/images/excerpt.jpg" src="<%=request.getContextPath()%>/images/excerpt.jpg" alt=""></a>
         <header><a class="cat" href="program">后端程序<i></i></a>
-          <h2><a href="article.jsp" title="">php如何判断一个日期的格式是否正确</a></h2>
+          <h2><a href="article.jsp" title="">java如何判断一个日期的格式是否正确</a></h2>
         </header>
         <p class="meta">
           <time class="time"><i class="glyphicon glyphicon-time"></i> 2016-1-4 10:29:39</time>
@@ -75,7 +75,7 @@
       </article>
       <article class="excerpt excerpt-2"><a class="focus" href="article.jsp" title=""><img class="thumb" data-original="<%=request.getContextPath()%>/images/excerpt.jpg" src="<%=request.getContextPath()%>/images/excerpt.jpg" alt=""></a>
         <header><a class="cat" href="program">后端程序<i></i></a>
-          <h2><a href="article.jsp" title="">php如何判断一个日期的格式是否正确</a></h2>
+          <h2><a href="article.jsp" title="">java如何判断一个日期的格式是否正确</a></h2>
         </header>
         <p class="meta">
           <time class="time"><i class="glyphicon glyphicon-time"></i> 2016-1-4 10:29:39</time>
@@ -84,7 +84,7 @@
       </article>
       <article class="excerpt excerpt-3"><a class="focus" href="article.jsp" title=""><img class="thumb" data-original="<%=request.getContextPath()%>/images/excerpt.jpg" src="<%=request.getContextPath()%>/images/excerpt.jpg" alt=""></a>
         <header><a class="cat" href="program">后端程序<i></i></a>
-          <h2><a href="article.jsp" title="">php如何判断一个日期的格式是否正确</a></h2>
+          <h2><a href="article.jsp" title="">java如何判断一个日期的格式是否正确</a></h2>
         </header>
         <p class="meta">
           <time class="time"><i class="glyphicon glyphicon-time"></i> 2016-1-4 10:29:39</time>
@@ -93,7 +93,7 @@
       </article>
       <article class="excerpt excerpt-4"><a class="focus" href="article.jsp" title=""><img class="thumb" data-original="<%=request.getContextPath()%>/images/excerpt.jpg" src="<%=request.getContextPath()%>/images/excerpt.jpg" alt=""></a>
         <header><a class="cat" href="program">后端程序<i></i></a>
-          <h2><a href="article.jsp" title="">php如何判断一个日期的格式是否正确</a></h2>
+          <h2><a href="article.jsp" title="">java如何判断一个日期的格式是否正确</a></h2>
         </header>
         <p class="meta">
           <time class="time"><i class="glyphicon glyphicon-time"></i> 2016-1-4 10:29:39</time>
@@ -102,7 +102,7 @@
       </article>
       <article class="excerpt excerpt-5"><a class="focus" href="article.jsp" title=""><img class="thumb" data-original="<%=request.getContextPath()%>/images/excerpt.jpg" src="<%=request.getContextPath()%>/images/excerpt.jpg" alt=""></a>
         <header><a class="cat" href="program">后端程序<i></i></a>
-          <h2><a href="article.jsp" title="">php如何判断一个日期的格式是否正确</a></h2>
+          <h2><a href="article.jsp" title="">java如何判断一个日期的格式是否正确</a></h2>
         </header>
         <p class="meta">
           <time class="time"><i class="glyphicon glyphicon-time"></i> 2016-1-4 10:29:39</time>
@@ -173,11 +173,11 @@
     <div class="widget widget_hot">
       <h3>热门文章</h3>
       <ul>
-        <li><a href=""><span class="thumbnail"><img class="thumb" data-original="<%=request.getContextPath()%>/images/excerpt.jpg" src="<%=request.getContextPath()%>/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
-        <li><a href=""><span class="thumbnail"><img class="thumb" data-original="<%=request.getContextPath()%>/images/excerpt.jpg" src="<%=request.getContextPath()%>/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
-        <li><a href=""><span class="thumbnail"><img class="thumb" data-original="<%=request.getContextPath()%>/images/excerpt.jpg" src="<%=request.getContextPath()%>/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
-        <li><a href=""><span class="thumbnail"><img class="thumb" data-original="<%=request.getContextPath()%>/images/excerpt.jpg" src="<%=request.getContextPath()%>/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
-        <li><a href=""><span class="thumbnail"><img class="thumb" data-original="<%=request.getContextPath()%>/images/excerpt.jpg" src="<%=request.getContextPath()%>/images/excerpt.jpg" alt=""></span><span class="text">php如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
+        <li><a href=""><span class="thumbnail"><img class="thumb" data-original="<%=request.getContextPath()%>/images/excerpt.jpg" src="<%=request.getContextPath()%>/images/excerpt.jpg" alt=""></span><span class="text">java如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
+        <li><a href=""><span class="thumbnail"><img class="thumb" data-original="<%=request.getContextPath()%>/images/excerpt.jpg" src="<%=request.getContextPath()%>/images/excerpt.jpg" alt=""></span><span class="text">java如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
+        <li><a href=""><span class="thumbnail"><img class="thumb" data-original="<%=request.getContextPath()%>/images/excerpt.jpg" src="<%=request.getContextPath()%>/images/excerpt.jpg" alt=""></span><span class="text">java如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
+        <li><a href=""><span class="thumbnail"><img class="thumb" data-original="<%=request.getContextPath()%>/images/excerpt.jpg" src="<%=request.getContextPath()%>/images/excerpt.jpg" alt=""></span><span class="text">java如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
+        <li><a href=""><span class="thumbnail"><img class="thumb" data-original="<%=request.getContextPath()%>/images/excerpt.jpg" src="<%=request.getContextPath()%>/images/excerpt.jpg" alt=""></span><span class="text">java如何判断一个日期的格式是否正确</span><span class="muted"><i class="glyphicon glyphicon-time"></i> 2016-1-4 </span><span class="muted"><i class="glyphicon glyphicon-eye-open"></i> 120</span></a></li>
       </ul>
     </div>
   </aside>

@@ -27,7 +27,7 @@
             </div>
             <div class="collapse navbar-collapse" id="header-navbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden-index active"><a data-cont="异清轩首页" href="index.jsp">异清轩首页</a></li>
+                    <li class="hidden-index active"><a data-cont="清歌一片首页" href="index">清歌一片首页</a></li>
                     <li><a href="category.jsp">前端技术</a></li>
                     <li><a href="category.jsp">后端程序</a></li>
                     <li><a href="category.jsp">管理系统</a></li>

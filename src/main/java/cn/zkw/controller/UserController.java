@@ -26,13 +26,14 @@ public class UserController extends AbstractAction {
     UserService service;
 
     @RequestMapping(value = "/registGetUser",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
-    public Object registGetUser(String user_name){
+    public @ResponseBody Object registGetUser(String user_name){
         JSONObject jsonObject = new JSONObject();
         if(service.getUserByName(user_name)!=null){
-            jsonObject.put("code",200);
+            jsonObject.put("code",201);
             jsonObject.put("msg","账号已存在");
         }else{
-            jsonObject.put("code",201);
+            jsonObject.put("code",200);
+            jsonObject.put("msg","可以使用的账号");
         }
         return jsonObject;
     }

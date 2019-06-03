@@ -10,7 +10,7 @@ $(function () {
         if (user_nickname.length < 2) {
             $("#user_nickname_div").attr("class", "form-group has-error");
             $("#user_nickname_msg").remove();
-            $("#user_nickname_div").append("<span id=user_nickname_msg style='color:red'>昵称太短</span>");
+            $("#user_nickname_div").append("<span id=user_nickname_msg style='color:mediumvioletred'>昵称太短</span>");
             flag_nickname = false;
         } else {
             $("#user_nickname_div").attr("class", "form-group has-success");
@@ -26,12 +26,33 @@ $(function () {
         if (reg.test(user_name) == false) {
             $("#user_name_div").attr("class", "form-group has-error");
             $("#user_name_msg").remove();
-            $("#user_name_div").append("<span id=user_name_msg style='color:red'>账号不能太短，且只能是数字哦</span>");
+            $("#user_name_div").append("<span id=user_name_msg style='color:mediumvioletred'>账号不能太短，且只能是数字哦</span>");
             flag_username = false;
         } else {
-            $("#user_name_div").attr("class", "form-group has-success");
-            $("#user_name_msg").remove();
-            flag_username = true;
+            $.ajax({
+                url : 'registGetUser',
+                type : 'get',
+                dataType: 'json',
+                data : {
+                    "user_name" : user_name
+                },
+                success : function (data) {
+                    if(data.code==200){
+                        $("#user_name_div").attr("class", "form-group has-success");
+                        $("#user_name_msg").remove();
+                        $("#user_name_div").append("<span id=user_name_msg style='color:mediumseagreen'>账号可以使用</span>");
+                        flag_username = true;
+                    }else if(data.code==201){
+                        $("#user_name_div").attr("class", "form-group has-error");
+                        $("#user_name_msg").remove();
+                        $("#user_name_div").append("<span id=user_name_msg style='color:mediumvioletred'>该账号已存在哦</span>");
+                    }
+                },
+                error : function (data) {
+
+                }
+            })
+
         }
     })
 
@@ -44,7 +65,7 @@ $(function () {
         if (user_password!=user_password2) {
             $("#user_password2_div").attr("class", "form-group has-error");
             $("#user_password2_msg").remove();
-            $("#user_password2_div").append("<span id=user_password2_msg style='color:red'>密码不一致</span>");
+            $("#user_password2_div").append("<span id=user_password2_msg style='color:mediumvioletred'>密码不一致</span>");
             flag_password2 = false;
         } else {
             $("#user_password2_div").attr("class", "form-group has-success");
@@ -56,7 +77,7 @@ $(function () {
         if (reg.test(user_password) == false) {
             $("#user_password_div").attr("class", "form-group has-error");
             $("#user_password_msg").remove();
-            $("#user_password_div").append("<span id=user_password_msg style='color:red'>长度为6~15,密码可以由字母、数字、_、组成，</span>");
+            $("#user_password_div").append("<span id=user_password_msg style='color:mediumvioletred'>长度为6~15,密码可以由字母、数字、_、组成，</span>");
             flag_password = false;
         } else {
             $("#user_password_div").attr("class", "form-group has-success");
@@ -73,7 +94,7 @@ $(function () {
         if (user_password!=user_password2) {
             $("#user_password2_div").attr("class", "form-group has-error");
             $("#user_password2_msg").remove();
-            $("#user_password2_div").append("<span id=user_password2_msg style='color:red'>密码不一致</span>");
+            $("#user_password2_div").append("<span id=user_password2_msg style='color:mediumvioletred'>密码不一致</span>");
             flag_password2 = false;
         } else {
             $("#user_password2_div").attr("class", "form-group has-success");

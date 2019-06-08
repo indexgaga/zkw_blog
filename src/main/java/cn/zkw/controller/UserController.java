@@ -4,6 +4,7 @@ import cn.zkw.service.UserService;
 import cn.zkw.util.action.AbstractAction;
 import cn.zkw.vo.User;
 import net.sf.json.JSONObject;
+import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.LockedAccountException;
@@ -25,15 +26,16 @@ public class UserController extends AbstractAction {
     @Resource
     UserService service;
 
-    @RequestMapping(value = "/registGetUser",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
-    public @ResponseBody Object registGetUser(String user_name){
+    @RequestMapping(value = "/registGetUser", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
+    public @ResponseBody
+    Object registGetUser(String user_name) {
         JSONObject jsonObject = new JSONObject();
-        if(service.getUserByName(user_name)!=null){
-            jsonObject.put("code",201);
-            jsonObject.put("msg","账号已存在");
-        }else{
-            jsonObject.put("code",200);
-            jsonObject.put("msg","可以使用的账号");
+        if (service.getUserByName(user_name) != null) {
+            jsonObject.put("code", 201);
+            jsonObject.put("msg", "账号已存在");
+        } else {
+            jsonObject.put("code", 200);
+            jsonObject.put("msg", "可以使用的账号");
         }
         return jsonObject;
     }
@@ -52,18 +54,18 @@ public class UserController extends AbstractAction {
         user.setUser_registration_time(new Date()); //注册时间
         user.setUser_rights(1);  //默认权限为一，，表示不是会员
 
-        if (service.getUserByName(user.getUser_name())==null) {
-            if (service.addUser(user)){
-                modelAndView.addObject("msg","注册成功！");
-                modelAndView.addObject("url","index");
+        if (service.getUserByName(user.getUser_name()) == null) {
+            if (service.addUser(user)) {
+                modelAndView.addObject("msg", "注册成功！");
+                modelAndView.addObject("url", "index");
                 return modelAndView;
-            }else{
-                modelAndView.addObject("msg","出现异常,注册失败，请联系管理员！");
-                modelAndView.addObject("url","userAdd");
+            } else {
+                modelAndView.addObject("msg", "出现异常,注册失败，请联系管理员！");
+                modelAndView.addObject("url", "userAdd");
             }
-        }else{
-            modelAndView.addObject("msg","注册失败，账号已存在！");
-            modelAndView.addObject("url","userAdd");
+        } else {
+            modelAndView.addObject("msg", "注册失败，账号已存在！");
+            modelAndView.addObject("url", "userAdd");
         }
         return modelAndView;
     }
@@ -81,14 +83,15 @@ public class UserController extends AbstractAction {
             jsonObject.put("code", 202);
         }
         jsonObject.put("msg", "注销成功");
-        jsonObject.put("url","index");
+        jsonObject.put("url", "index");
         jsonObject.put("code", 200);
         return jsonObject;
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public @ResponseBody
-    Object login(User user) throws Exception {
+    Object login(User user, HttpServletRequest request) throws Exception {
+        System.out.println(this.getIp2(request));
         JSONObject json = new JSONObject();
         json.put("code", 200);
         json.put("msg", "登陆成功");
@@ -114,13 +117,31 @@ public class UserController extends AbstractAction {
         return json;
     }
 
+    public String getIp2(HttpServletRequest request) {
+        String ip = request.getHeader("X-Forwarded-For");
+        if (StringUtils.isNotEmpty(ip) && !"unKnown".equalsIgnoreCase(ip)) {
+            //多次反向代理后会有多个ip值，第一个ip才是真实ip
+            int index = ip.indexOf(",");
+            if (index != -1) {
+                return ip.substring(0, index);
+            } else {
+                return ip;
+            }
+        }
+        ip = request.getHeader("X-Real-IP");
+        if (StringUtils.isNotEmpty(ip) && !"unKnown".equalsIgnoreCase(ip)) {
+            return ip;
+        }
+        return request.getRemoteAddr();
+    }
+
     @RequestMapping("userAdd")
-    public String userAdd(){
+    public String userAdd() {
         return "front/userAdd";
     }
 
     @RequestMapping("index")
-    public String index(){
+    public String index() {
         return "front/index";
     }
 

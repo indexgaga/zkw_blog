@@ -10,4 +10,8 @@
 		INSERT INTO user(user_ip,user_name,user_password,user_photo,user_level,user_rights,user_registration_time,user_birthday,user_nickname,user_lock)
 		VALUES(#{user_ip},#{user_name},#{user_password},#{user_photo},#{user_level},#{user_rights},#{user_registration_time},#{user_birthday},#{user_nickname},#{user_lock})
 	</insert>
+
+	<update id="updateUserNameById" parameterType="User">
+		UPDATE user SET user_nickname=#{user_nickname} WHERE user_name=#{user_name}
+	</update>
 </mapper>  

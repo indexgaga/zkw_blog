@@ -56,8 +56,15 @@
                 //下面应该判断是否做了修改并使用ajax代码请求服务端将id与修改后的数据提交
             //alert(element.id);
                     //当触发时判断newobj的值是否为空，为空则不修改，并返回oldhtml
-            element.innerHTML = this.value ? this.value : oldhtml;
+            //element.innerHTML = this.value ? this.value : oldhtml;
+                if(this.value==null || this.value==""){
+                    element.innerHTML = oldhtml;
+                }else if(this.value==oldhtml){
+                    element.innerHTML = oldhtml;
+                }else{
+
                 }
+            }
         }
 
         function sex_Edit(){
@@ -70,7 +77,7 @@
 <jsp:include page="head.jsp" flush="true"/>
     <div class="container-fluid">
         <div class="row">
-            <img src="img.jpg" alt="..." class="img-circle img-responsive" >
+            <img src="<%=request.getContextPath()%>/uploadFiles/userPhoto/${user.user_photo}" alt="..." class="img-circle img-responsive" >
         </div>
         <div class="row">
             <div class="col-xs-12" style="width:300em;"><h3 >等级: <span>13</span></h3></div>

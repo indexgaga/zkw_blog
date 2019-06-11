@@ -20,12 +20,23 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
+import java.util.logging.Logger;
 
 @Controller
 public class UserController extends AbstractAction {
+    Logger logger = Logger.getLogger("UserController");
     @Resource
     UserService service;
 
+    @RequestMapping(value = "/updateUserName", method = RequestMethod.PUT, produces = "application/json;charset=UTF-8")
+    public Object updateUserName(String user_nickname){
+        logger.info("user_name"+SecurityUtils.getSubject().getPrincipal());
+        User user = new User();
+        logger.info("user_nickname"+user_nickname);
+        user.setUser_nickname(user_nickname);
+        user.setUser_name((String)SecurityUtils.getSubject().getPrincipal());
+        return null;
+    }
 
     @RequestMapping(value = "/registGetUser", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
     public @ResponseBody
@@ -51,7 +62,7 @@ public class UserController extends AbstractAction {
         user.setUser_lock(0); //用户默认不锁定
         user.setUser_level(1); //用户默认等级为一级
         user.setUser_ip(request.getRemoteAddr());  //ip
-        user.setUser_photo("nophoto.png");  //头像名称
+        user.setUser_photo("nophoto.jpg");  //头像名称
         user.setUser_registration_time(new Date()); //注册时间
         user.setUser_rights(1);  //默认权限为一，，表示不是会员
 

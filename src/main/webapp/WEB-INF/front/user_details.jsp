@@ -1,3 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -7,20 +10,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>Bootstrap 101 Template</title>
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
-    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/nprogress.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/font-awesome.min.css">
+    <link rel="apple-touch-icon-precomposed" href="<%=request.getContextPath()%>/images/icon/icon.png">
+    <link rel="shortcut icon" href="<%=request.getContextPath()%>/images/icon/favicon.ico">
+    <script src="<%=request.getContextPath()%>/js/jquery-2.1.4.min.js"></script>
+    <script src="<%=request.getContextPath()%>/js/nprogress.js"></script>
+    <script src="<%=request.getContextPath()%>/js/jquery.lazyload.min.js"></script>
+    <!--[if gte IE 9]>
+    <script src="<%=request.getContextPath()%>/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="<%=request.getContextPath()%>/js/html5shiv.min.js" type="text/javascript"></script>
+    <script src="<%=request.getContextPath()%>/js/respond.min.js" type="text/javascript"></script>
+    <script src="<%=request.getContextPath()%>/js/selectivizr-min.js" type="text/javascript"></script>
+    <![endif]-->
     <!--[if lt IE 9]>
-      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <script>window.location.href='upgrade-browser.html';</script>
+    <![endif]-->
+    <!--[if lt IE 9]>
     <![endif]-->
     <style>
         .row{
             width:20%;
             margin-left:30%;
+            margin-top: 20px;
         }
 
         h3{
@@ -53,6 +67,7 @@
 </head>
 
 <body>
+<jsp:include page="head.jsp" flush="true"/>
     <div class="container-fluid">
         <div class="row">
             <img src="img.jpg" alt="..." class="img-circle img-responsive" >
@@ -62,19 +77,19 @@
             <div></div>
         </div>
         <div class="row">
-            <div class="col-xs-12" style="width:300em"><h3>账号: <span>13982829</span></h3></div>
+            <div class="col-xs-12" style="width:300em"><h3>账号: <span>${user.user_name}</span></h3></div>
         </div>
         <div class="row">
-            <div class="col-xs-12" style="width:300em"><h3>昵称: <span id="user_name">欧巴桑</span> <span id="pencil" onclick="edit()" class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h3></div>
+            <div class="col-xs-12" style="width:300em"><h3>昵称: <span id="user_name">${user.user_nickname}</span> <span id="pencil" onclick="edit()" class="glyphicon glyphicon-pencil" aria-hidden="true"></span></h3></div>
         </div>
         <div class="row">
-            <div class="col-xs-12" style="width:300em"><h3>年龄: <span>20</span></h3></div>
+            <div class="col-xs-12" style="width:300em"><h3>年龄: <span>${user_age}</span></h3></div>
         </div>
         <div class="row">
             <div class="col-xs-12" style="width:300em"><h3>性别: <span>
                 <select id="user_sex" style="font-size:80%;height:30px" onchange="sex_Edit()">
-                    <option value="男">男</option>
-                    <option value="女">女</option>
+                    <option value="男" <c:if test="${user.user_sex}==2">selected="selected"</c:if>>男</option>
+                    <option value="女" <c:if test="${user.user_sex}==1">selected="selected"</c:if>>女</option>
                 </select>
             </span></h3></div>
         </div>
@@ -82,10 +97,9 @@
             <div class="col-xs-12" style="width:300em"><h3>生日: <span><input type="date" style="font-size:70%"></span></h3></div>
         </div>
     </div>
-    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+<script src="<%=request.getContextPath()%>/js/jquery.ias.js"></script>
+<script src="<%=request.getContextPath()%>/js/scripts.js"></script>
 </body>
 
 </html>

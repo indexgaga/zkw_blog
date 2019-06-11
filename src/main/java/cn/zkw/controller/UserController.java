@@ -26,6 +26,7 @@ public class UserController extends AbstractAction {
     @Resource
     UserService service;
 
+
     @RequestMapping(value = "/registGetUser", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
     public @ResponseBody
     Object registGetUser(String user_name) {
@@ -143,6 +144,16 @@ public class UserController extends AbstractAction {
     @RequestMapping("index")
     public String index() {
         return "front/index";
+    }
+
+    @RequestMapping("userDetails")
+    public ModelAndView userDetails(String user_name){
+        ModelAndView modelAndView = new ModelAndView("front/user_details");
+        User user = service.getUserByName(user_name);
+        modelAndView.addObject("user",user);
+        System.out.println(user.getUser_sex());
+        modelAndView.addObject("user_age",super.getAgeByBirthday(user.getUser_birthday()));//计算年龄
+        return modelAndView;
     }
 
     @Override

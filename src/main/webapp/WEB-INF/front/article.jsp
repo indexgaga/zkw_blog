@@ -12,7 +12,7 @@
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>异清轩博客文章页面</title>
+<title>清歌一片文章页面</title>
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/css/nprogress.css">
 <link rel="stylesheet" type="text/css" href="/css/style.css">

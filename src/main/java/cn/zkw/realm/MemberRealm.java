@@ -58,6 +58,7 @@ public class MemberRealm extends AuthorizingRealm {
 			if (vo.getUser_password().equals(password)) { // 密码正确
 				AuthenticationInfo auth = new SimpleAuthenticationInfo(username, password, "memberRealm");
 				SecurityUtils.getSubject().getSession().setAttribute("name", vo.getUser_nickname());
+				SecurityUtils.getSubject().getSession().setAttribute("user_name",vo.getUser_name());
 				SecurityUtils.getSubject().getSession().setAttribute("photo",vo.getUser_photo());
 				return auth;
 			} else {

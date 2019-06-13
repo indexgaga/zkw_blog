@@ -57,7 +57,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="loginModalUserNmae">用户名</label>
-                        <input type="text" class="form-control" id="loginModalUserNmae" placeholder="请输入用户名" autofocus maxlength="15" autocomplete="off" required>
+                        <input type="text" autofocus class="form-control" id="loginModalUserNmae" placeholder="请输入用户名" autofocus maxlength="15" autocomplete="off" required>
                     </div>
                     <div class="form-group">
                         <label for="loginModalUserPwd">密码</label>

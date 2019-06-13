@@ -62,13 +62,66 @@
                 }else if(this.value==oldhtml){
                     element.innerHTML = oldhtml;
                 }else{
-
+                    var user_nickname = this.value;
+                    $.ajax({
+                        url : 'updateUserName?user_nickname='+user_nickname,
+                        type : 'put',
+                        dataType : 'json',
+                        data : {
+                            //user_nickname:user_nickname
+                        },
+                        success : function (data) {
+                            if(data.code == 200){
+                                element.innerHTML = newobj.value;
+                            }else{
+                                alert("修改失败");
+                            }
+                        },
+                        error : function (data) {
+                            alert("修改失败");
+                        }
+                    })
                 }
             }
         }
 
         function sex_Edit(){
-            
+            var select_sex = $("#user_sex").val();
+            $.ajax({
+                url : "updateSex?user_sex="+select_sex,
+                type : "put",
+                dataType : "json",
+                success : function (data) {
+                    if(data.code==200){
+                    }else{
+                        alert("修改失败");
+                    }
+                },
+                error : function (data) {
+                    alert("修改失败");
+                }
+            })
+        }
+
+        function birthday_edit(){
+            var birthday = $("#user_birthday").val();
+            $.ajax({
+                url : "updateBirthday?user_birthday="+birthday,
+                type : "put",
+                dataType : "json",
+                success : function (data) {
+                    if(data.code==200){
+
+                    }else if(data.code==304){
+                        alert("更新失败");
+                    }
+                },
+                error : function () {
+                    if(data.code==304){
+                        alert("更新失败");
+                    }
+                }
+            })
         }
         </script>
 </head>
@@ -95,13 +148,13 @@
         <div class="row">
             <div class="col-xs-12" style="width:300em"><h3>性别: <span>
                 <select id="user_sex" style="font-size:80%;height:30px" onchange="sex_Edit()">
-                    <option value="男" <c:if test="${user.user_sex}==2">selected="selected"</c:if>>男</option>
-                    <option value="女" <c:if test="${user.user_sex}==1">selected="selected"</c:if>>女</option>
+                    <option value="2" <c:if test="${user.user_sex==2}">selected="selected"</c:if>>男</option>
+                    <option value="1" <c:if test="${user.user_sex==1}">selected="selected"</c:if>>女</option>
                 </select>
             </span></h3></div>
         </div>
         <div class="row">
-            <div class="col-xs-12" style="width:300em"><h3>生日: <span><input type="date" style="font-size:70%"></span></h3></div>
+            <div class="col-xs-12" style="width:300em"><h3>生日: <span><input type="date" id="user_birthday" onchange="birthday_edit()" value="${birthday}" style="font-size:70%"></span></h3></div>
         </div>
     </div>
 <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>

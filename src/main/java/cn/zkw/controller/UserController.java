@@ -3,6 +3,7 @@ package cn.zkw.controller;
 import cn.zkw.service.UserService;
 import cn.zkw.util.action.AbstractAction;
 import cn.zkw.vo.User;
+import net.sf.json.JSON;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
 import org.apache.shiro.SecurityUtils;
@@ -19,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Logger;
 
@@ -28,16 +30,62 @@ public class UserController extends AbstractAction {
     @Resource
     UserService service;
 
-    @RequestMapping(value = "/updateUserName", method = RequestMethod.PUT, produces = "application/json;charset=UTF-8")
-    public Object updateUserName(String user_nickname){
-        logger.info("user_name"+SecurityUtils.getSubject().getPrincipal());
+    @RequestMapping(value = "/updateBirthday",method = RequestMethod.PUT,produces = "application/json;charset=UTF-8")
+    public @ResponseBody Object updateBirthdayById(Date user_birthday){
         User user = new User();
-        logger.info("user_nickname"+user_nickname);
-        user.setUser_nickname(user_nickname);
-        user.setUser_name((String)SecurityUtils.getSubject().getPrincipal());
-        return null;
+        user.setUser_name(String.valueOf(SecurityUtils.getSubject().getPrincipal()));
+        user.setUser_birthday(user_birthday);
+        JSONObject jsonObject = new JSONObject();
+        if(service.updateBirthdayById(user)){
+            jsonObject.put("code",200);
+        }else{
+            jsonObject.put("code",304);
+        }
+        return jsonObject;
     }
 
+    @RequestMapping(value = "/updateSex", method = RequestMethod.PUT, produces = "application/json;charset=UTF-8")
+    public @ResponseBody Object updateUserSexById(String user_sex){
+        Integer sex = Integer.parseInt(user_sex);
+        User user = new User();
+        user.setUser_sex(sex);
+        user.setUser_name(String.valueOf(SecurityUtils.getSubject().getPrincipal()));
+        JSONObject jsonObject = new JSONObject();
+        if(service.updateSexById(user)){
+            jsonObject.put("code",200);
+        }else{
+            jsonObject.put("code",201);
+        }
+        return jsonObject;
+    }
+
+    /**
+     * 根据当前登陆的账号更新用户名
+     * @param user_nickname
+     * @return
+     */
+    @RequestMapping(value = "/updateUserName", method = RequestMethod.PUT, produces = "application/json;charset=UTF-8")
+    public @ResponseBody Object updateUserName(String user_nickname){
+        logger.info("updateUserName-user_name:"+SecurityUtils.getSubject().getPrincipal());
+        User user = new User();//new一个user对象传给mybatis
+        logger.info("updateUserName-user_nickname:"+user_nickname);
+        user.setUser_nickname(user_nickname); //传入要修改的昵称
+        user.setUser_name((String)SecurityUtils.getSubject().getPrincipal());  //传入要修改的账号
+        JSONObject jsonObject = new JSONObject();//接口数据的返回
+        if(service.updateNikeName(user)){
+            jsonObject.put("code",200);
+        }else{
+            jsonObject.put("code",201);
+        }
+
+        return jsonObject;
+    }
+
+    /**
+     * 检测同名账号接口
+     * @param user_name
+     * @return
+     */
     @RequestMapping(value = "/registGetUser", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
     public @ResponseBody
     Object registGetUser(String user_name) {
@@ -52,7 +100,13 @@ public class UserController extends AbstractAction {
         return jsonObject;
     }
 
-
+    /**
+     * 注册账号
+     * @param user
+     * @param request
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value = "/addUser", method = RequestMethod.POST)
     public @ResponseBody
     Object addUser(User user, HttpServletRequest request) throws Exception {
@@ -82,6 +136,12 @@ public class UserController extends AbstractAction {
         return modelAndView;
     }
 
+    /**
+     * 登陆注销
+     * @param request
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value = "/loginOut", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
     public @ResponseBody
     Object loginOut(HttpServletRequest request) throws Exception {
@@ -100,6 +160,13 @@ public class UserController extends AbstractAction {
         return jsonObject;
     }
 
+    /**
+     * 登陆功能
+     * @param user
+     * @param request
+     * @return
+     * @throws Exception
+     */
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public @ResponseBody
     Object login(User user, HttpServletRequest request) throws Exception {
@@ -157,10 +224,18 @@ public class UserController extends AbstractAction {
         return "front/index";
     }
 
+    /**
+     * 获取用户详细信息
+     * @param user_name
+     * @return
+     */
     @RequestMapping("userDetails")
     public ModelAndView userDetails(String user_name){
         ModelAndView modelAndView = new ModelAndView("front/user_details");
         User user = service.getUserByName(user_name);
+        Date date =  user.getUser_birthday();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        modelAndView.addObject("birthday",simpleDateFormat.format(date));
         modelAndView.addObject("user",user);
         System.out.println(user.getUser_sex());
         modelAndView.addObject("user_age",super.getAgeByBirthday(user.getUser_birthday()));//计算年龄

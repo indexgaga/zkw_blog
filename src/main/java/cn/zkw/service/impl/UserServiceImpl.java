@@ -16,7 +16,22 @@ public class UserServiceImpl implements UserService {
         return dao.findUserByName(user_name);
     }
 
+    @Override
+    public boolean updateNikeName(User user) {
+        return dao.updateUserNameById(user)>=1;
+    }
+
     public boolean addUser(User user){
         return dao.addUser(user)>=1;
+    }
+
+    @Override
+    public boolean updateSexById(User user) {
+        return dao.updateSexById(user)>=1;
+    }
+
+    @Override
+    public boolean updateBirthdayById(User user) {
+        return dao.updateBirthdayById(user)>=1;
     }
 }

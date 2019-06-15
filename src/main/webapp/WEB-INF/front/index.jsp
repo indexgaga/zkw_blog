@@ -230,6 +230,11 @@
     <li class="list-group-item"><span>浏览器：</span>Chrome47</li>
   </ul>
 </div>
+<script>
+  function getContextPath(){
+    return "<%=request.getContextPath()%>";
+  }
+</script>
 <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
 <script src="<%=request.getContextPath()%>/js/jquery.ias.js"></script>
 <script src="<%=request.getContextPath()%>/js/scripts.js"></script>

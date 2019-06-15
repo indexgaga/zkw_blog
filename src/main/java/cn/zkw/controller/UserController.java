@@ -2,6 +2,7 @@ package cn.zkw.controller;
 
 import cn.zkw.service.UserService;
 import cn.zkw.util.action.AbstractAction;
+import cn.zkw.util.encrypt.MyPasswordEncrypt;
 import cn.zkw.vo.User;
 import net.sf.json.JSON;
 import net.sf.json.JSONObject;
@@ -113,6 +114,8 @@ public class UserController extends AbstractAction {
         System.out.println(request.getRemoteAddr());
         System.out.println(user);
         ModelAndView modelAndView = new ModelAndView("front/tip");
+        String password = MyPasswordEncrypt.encryptPassword(user.getUser_password());
+        user.setUser_password(password);
         user.setUser_lock(0); //用户默认不锁定
         user.setUser_level(1); //用户默认等级为一级
         user.setUser_ip(request.getRemoteAddr());  //ip

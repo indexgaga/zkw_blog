@@ -116,7 +116,8 @@ document.body.onselectstart = document.body.ondrag = function () {
 //启用工具提示
 $('[data-toggle="tooltip"]').tooltip();
  
- 
+ var loading = getContextPath() + "/images/loading.gif";
+
 //无限滚动反翻页
 jQuery.ias({
 	history: false,
@@ -125,7 +126,7 @@ jQuery.ias({
 	pagination: '.pagination',
 	next: '.next-page a',
 	trigger: '查看更多',
-	loader: '<div class="pagination-loading"><img src="<%=request.getContextPath()%>/images/loading.gif" /></div>',
+	loader: '<div class="pagination-loading"><img src="'+loading+'"/></div>',
 	triggerPageThreshold: 5,
 	onRenderComplete: function() {
 		$('.excerpt .thumb').lazyload({

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="cn.zkw.mapping.IUserDao">
+	<!--用户查询-->
+	<select id="findUserByName" parameterType="String" resultType="User">
+		SELECT * FROM user WHERE user_name=#{user_name}
+	</select>
+
+	<!--添加用户-->
+	<insert id="addUser" parameterType="User">
+		INSERT INTO user(user_ip,user_name,user_password,user_photo,user_level,user_rights,user_registration_time,user_birthday,user_nickname,user_lock)
+		VALUES(#{user_ip},#{user_name},#{user_password},#{user_photo},#{user_level},#{user_rights},#{user_registration_time},#{user_birthday},#{user_nickname},#{user_lock})
+	</insert>
+
+	<!--更新昵称-->
+	<update id="updateUserNameById" parameterType="User">
+		UPDATE user SET user_nickname=#{user_nickname} WHERE user_name=#{user_name}
+	</update>
+
+	<!--更新性别-->
+    <update id="updateSexById" parameterType="User">
+        UPDATE user SET user_sex=#{user_sex} WHERE user_name=#{user_name}
+    </update>
+
+	<!--更新生日-->
+	<update id="updateBirthdayById" parameterType="User">
+		UPDATE user SET user_birthday=#{user_birthday} WHERE user_name=#{user_name}
+	</update>
+</mapper>  

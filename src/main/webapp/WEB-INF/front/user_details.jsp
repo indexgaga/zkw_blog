@@ -159,7 +159,7 @@
     </div>
 <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
 <script src="<%=request.getContextPath()%>/js/jquery.ias.js"></script>
-<script src="<%=request.getContextPath()%>/js/scripts.js"></script>
+<script src="<%=request.getContextPath()%>/js/scripts.scripts.jsp"></script>
 </body>
 
 </html>

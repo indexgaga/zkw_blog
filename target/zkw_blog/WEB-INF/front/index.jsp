@@ -15,6 +15,12 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/font-awesome.min.css">
 <link rel="apple-touch-icon-precomposed" href="<%=request.getContextPath()%>/images/icon/icon.png">
 <link rel="shortcut icon" href="<%=request.getContextPath()%>/images/icon/favicon.ico">
+<script>
+  function getContextPath1(){
+    return "<%=request.getContextPath()%>";
+  }
+  var loading = getContextPath1() + "/images/loading.gif";
+</script>
 <script src="<%=request.getContextPath()%>/js/jquery-2.1.4.min.js"></script>
 <script src="<%=request.getContextPath()%>/js/nprogress.js"></script>
 <script src="<%=request.getContextPath()%>/js/jquery.lazyload.min.js"></script>
@@ -230,11 +236,7 @@
     <li class="list-group-item"><span>浏览器：</span>Chrome47</li>
   </ul>
 </div>
-<script>
-  function getContextPath(){
-    return "<%=request.getContextPath()%>";
-  }
-</script>
+
 <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
 <script src="<%=request.getContextPath()%>/js/jquery.ias.js"></script>
 <script src="<%=request.getContextPath()%>/js/scripts.js"></script>

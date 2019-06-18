@@ -115,8 +115,8 @@ document.body.onselectstart = document.body.ondrag = function () {
  
 //启用工具提示
 $('[data-toggle="tooltip"]').tooltip();
- 
- var loading = getContextPath() + "/images/loading.gif";
+
+// var loading = getContextPath1() + "/images/loading.gif";
 
 //无限滚动反翻页
 jQuery.ias({

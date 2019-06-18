@@ -265,7 +265,7 @@
 </div>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/jquery.ias.js"></script>
-<script src="/js/scripts.js"></script>
+<script src="/js/scripts.scripts.jsp"></script>
 <script src="/js/jquery.qqFace.js"></script>
 <script type="text/javascript">
 $(function(){

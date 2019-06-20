@@ -1,7 +1,6 @@
 package cn.zkw.controller.back;
 
 import cn.zkw.service.ArticleService;
-import cn.zkw.service.SortService;
 import cn.zkw.service.UserService;
 import cn.zkw.util.action.AbstractAction;
 import cn.zkw.vo.Article;

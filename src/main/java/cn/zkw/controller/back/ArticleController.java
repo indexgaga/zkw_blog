@@ -5,17 +5,20 @@ import cn.zkw.service.UserService;
 import cn.zkw.util.action.AbstractAction;
 import cn.zkw.vo.Article;
 import cn.zkw.vo.User;
+import net.sf.json.JSON;
 import net.sf.json.JSONObject;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
-
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 @RequestMapping("/back/article")
@@ -26,8 +29,25 @@ public class ArticleController extends AbstractAction {
     @Autowired
     UserService userService;
 
-//String article_content,String article_title,String article_keyword,String article_describe
-//            ,String sort_id,String label_name
+
+    @RequestMapping(value = "/page/{nextPage}")
+    public @ResponseBody Object splitArticle(@PathVariable int nextPage){
+        JSONObject jsonObject = new JSONObject();
+        List<Article> articles = articleService.splitArticle(nextPage);
+        jsonObject.put("articles",articles);  //获取文章
+        //总数
+        int count = articleService.getArticleAllNum();
+        //总页数
+        int pageNum = count / 5;
+        jsonObject.put("pageNum",pageNum);
+
+        if (pageNum > nextPage) {
+            jsonObject.put("nextPage", nextPage + 1);
+        }
+        return jsonObject;
+    }
+
+    //添加文章
     @RequestMapping(value = "/add",method = RequestMethod.POST)
     public ModelAndView addArticle(Article article){
         User user =  userService.getUserByName(String.valueOf(SecurityUtils.getSubject().getPrincipal()));  //查询当前用户的id

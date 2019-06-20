@@ -7,7 +7,7 @@
     "imageCompressBorder": 1600,
     "imageInsertAlign": "none",
     "imageUrlPrefix": "/zkw_blog",
-    "imagePathFormat": "/uploadFiles/atricleImg/{time}{rand:6}",
+    "imagePathFormat": "/uploadFiles/atricleImg/{yyyy}{mm}{dd}/{time}{rand:6}",
 
 
     "scrawlActionName": "uploadscrawl",

@@ -1,13 +1,13 @@
 {
     "imageActionName": "uploadimage",
     "imageFieldName": "upfile",
-    "imageMaxSize": 2048000,
+    "imageMaxSize": 4048000,
     "imageAllowFiles": [".png", ".jpg", ".jpeg", ".gif", ".bmp"],
     "imageCompressEnable": true,
     "imageCompressBorder": 1600,
     "imageInsertAlign": "none",
     "imageUrlPrefix": "/zkw_blog",
-    "imagePathFormat": "/uploadFiles/atricleImg/{time}{rand:6}",
+    "imagePathFormat": "/uploadFiles/atricleImg/{yyyy}{mm}{dd}/{time}{rand:6}",
 
 
     "scrawlActionName": "uploadscrawl",

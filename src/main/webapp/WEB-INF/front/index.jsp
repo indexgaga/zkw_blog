@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page isELIgnored="false" %>
 <!doctype html>
 <html lang="zh-CN">
@@ -67,26 +68,31 @@
         <p class="note">一次我下载几部电影，发现如果同时下载多部要等上几个小时，然后我把最想看的做个先后排序，去设置同时只能下载一部，结果是不到一杯茶功夫我就能看到最想看的电影。 这就像我们一段时间内想干成很多事情，是同时干还是有选择有顺序的干，结果很不一样。同时...</p>
       </article>
       <div class="title">
+
         <h3>最新发布</h3>
         <div class="more"><a href="">java</a><a href="">JavaScript</a><a href="">EmpireCMS</a><a href="">Apache</a><a href="">MySQL</a></div>
       </div>
       <%--文章列表--%>
-      <article class="excerpt excerpt-1"><a class="focus" href="article.jsp" title=""><img class="thumb" data-original="<%=request.getContextPath()%>/images/excerpt.jpg" src="<%=request.getContextPath()%>/images/excerpt.jpg" alt=""></a>
-        <header><a class="cat" href="program">后端程序<i></i></a>
-          <h2><a href="article.jsp" title="">${article_title}</a></h2>
-        </header>
-        <p class="meta">
-          <time class="time"><i class="glyphicon glyphicon-time"></i> 2016-1-4 10:29:39</time>
-          <span class="views"><i class="glyphicon glyphicon-eye-open"></i> 共${article_views}人围观</span> <a class="comment" href="article.jsp#comment"><i class="glyphicon glyphicon-comment"></i> 0个不明物体</a></p>
-        <p class="note">${article_describe}...</p>
-      </article>
+      <article class="excerpt excerpt-0"  style="display: none;visibility: hidden;"></article>
+
+      <c:forEach items="${articles}" var="article">
+        <article class="excerpt excerpt-1"><a class="focus" href="article.jsp" title=""><img class="thumb" data-original="${article.article_img}" src="${article.article_img}" alt=""></a>
+          <header><a class="cat" href="program">${article.sort_name}<i></i></a>
+            <h2><a href="article.jsp" title="">${article.article_title}</a></h2>
+          </header>
+          <p class="meta">
+            <time class="time"><i class="glyphicon glyphicon-time"></i><fmt:formatDate value="${article.article_date}" pattern="yyyy-MM-dd HH:mm:ss" /></time>
+            <span class="views"><i class="glyphicon glyphicon-eye-open"></i> 共${article.article_views}人围观</span> <a class="comment" href="article.jsp#comment"><i class="glyphicon glyphicon-comment"></i> 0个不明物体</a></p>
+          <p class="note">${article.article_describe}...</p>
+        </article>
+      </c:forEach>
 
       <nav class="pagination" style="display: none;">
         <ul>
           <li class="prev-page"></li>
           <li class="active"><span>1</span></li>
           <li><a href="?page=2">2</a></li>
-          <li class="next-page"><a href="<%=request.getContextPath()%>/back/article/page/${nextPage}">下一页</a></li>
+          <li class="next-page"><a href="<%=request.getContextPath()%>/back/article/page?nextPage=${nextPage}">下一页</a></li>
           <li><span>共 ${pageNum} 页</span></li>
         </ul>
       </nav>
@@ -202,7 +208,9 @@
     <li class="list-group-item"><span>浏览器：</span>Chrome47</li>
   </ul>
 </div>
+<script>
 
+</script>
 <script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
 <script src="<%=request.getContextPath()%>/js/jquery.ias.js"></script>
 <script src="<%=request.getContextPath()%>/js/scripts.js"></script>

@@ -1,5 +1,6 @@
 package cn.zkw.controller;
 
+import cn.zkw.service.ArticleService;
 import cn.zkw.service.UserService;
 import cn.zkw.util.action.AbstractAction;
 import cn.zkw.util.encrypt.MyPasswordEncrypt;
@@ -13,7 +14,9 @@ import org.apache.shiro.authc.LockedAccountException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -23,6 +26,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Logger;
 
 @Controller
@@ -30,6 +34,9 @@ public class UserController extends AbstractAction {
     Logger logger = Logger.getLogger("UserController");
     @Resource
     UserService service;
+
+    @Autowired
+    ArticleService articleService;
 
     @RequestMapping(value = "/updateBirthday",method = RequestMethod.PUT,produces = "application/json;charset=UTF-8")
     public @ResponseBody Object updateBirthdayById(Date user_birthday){
@@ -223,7 +230,7 @@ public class UserController extends AbstractAction {
     }
 
     @RequestMapping("index")
-    public String index() {
+    public String index(Model model) {
         return "front/index";
     }
 

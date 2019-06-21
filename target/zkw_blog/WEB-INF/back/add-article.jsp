@@ -82,19 +82,19 @@
             </div>
             <div class="form-group">
               <label for="article-content" class="sr-only">内容</label>
-              <script id="article-content" name="article_content" type="text/plain"></script>
+              <script id="article-content" name="article_content" type="text/plain" ></script>
             </div>
             <div class="add-article-box">
               <h2 class="add-article-box-title"><span>关键字</span></h2>
               <div class="add-article-box-content">
-              	<input type="text" class="form-control" placeholder="请输入关键字" name="article_keyword" autocomplete="off">
+              	<input type="text" class="form-control" required placeholder="请输入关键字" name="article_keyword" autocomplete="off">
                 <span class="prompt-text">多个关键字请用英文逗号,隔开。</span>
               </div>
             </div>
             <div class="add-article-box">
               <h2 class="add-article-box-title"><span>描述</span></h2>
               <div class="add-article-box-content">
-              	<textarea class="form-control" name="article_describe" autocomplete="off"></textarea>
+              	<textarea class="form-control" name="article_describe" autocomplete="off" required></textarea>
                 <span class="prompt-text">描述是可选的手工创建的内容总结，并可以在网页描述中使用</span>
               </div>
             </div>
@@ -129,13 +129,13 @@
             <div class="add-article-box">
               <h2 class="add-article-box-title"><span>标签</span></h2>
               <div class="add-article-box-content">
-                <input type="text" class="form-control" placeholder="输入新标签" name="label_name" autocomplete="off">
+                <input type="text" class="form-control" required placeholder="输入新标签" name="label_name" autocomplete="off">
                 <span class="prompt-text">多个标签请用英文逗号,隔开</span> </div>
             </div>
             <div class="add-article-box">
               <h2 class="add-article-box-title"><span>标题图片</span></h2>
               <div class="add-article-box-content">
-                <input type="text" class="form-control" placeholder="点击按钮选择图片" id="pictureUpload" name="article_img" autocomplete="off">
+                <input type="text" class="form-control" required placeholder="点击按钮选择图片" id="pictureUpload" name="article_img" autocomplete="off">
               </div>
               <div class="add-article-box-footer">
                 <button class="btn btn-default" type="button" ID="upImage">选择</button>
@@ -145,7 +145,7 @@
               <h2 class="add-article-box-title"><span>发布</span></h2>
               <div class="add-article-box-content">
               	<p><label>状态：</label><span class="article-status-display">未发布</span></p>
-                <p><label>公开度：</label><input type="radio" name="visibility" value="0" checked/>公开 <input type="radio" name="visibility" value="1" />加密</p>
+                <p><label>公开度：</label><input type="radio" name="article_ispublic" value="1" checked/>公开<input type="radio"  name="article_ispublic" value="0" />加密</p>
                 <p><label>发布于：</label><span class="article-time-display"><input style="border: none;" type="datetime" name="time" value="${date}" /></span></p>
               </div>
               <div class="add-article-box-footer">

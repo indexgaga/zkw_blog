@@ -18,7 +18,8 @@ public class Article implements Serializable {
     private String article_content;     //文章内容
     private String article_keyword;     //文章关键字字符串集,逗号分隔
     private String article_describe;    //文章介绍
-    private String sort_id;             //分类id
+    private Integer sort_id;             //分类id
+    private String sort_name;           //分类名称,,没有与aticle表映射,,来自sort表,这里只是做个封装
     private String label_name;          //标签名字符串集,逗号分隔
     private Date article_date;          //发布时间
     private Integer article_like_count; //点赞数量
@@ -28,6 +29,16 @@ public class Article implements Serializable {
     public Integer getArticle_id() {
         return article_id;
     }
+
+
+    public String getSort_name() {
+        return sort_name;
+    }
+
+    public void setSort_name(String sort_name) {
+        this.sort_name = sort_name;
+    }
+
 
     public Integer getArticle_views() {
         return article_views;
@@ -89,11 +100,11 @@ public class Article implements Serializable {
         this.article_describe = article_describe;
     }
 
-    public String getSort_id() {
+    public Integer getSort_id() {
         return sort_id;
     }
 
-    public void setSort_id(String sort_id) {
+    public void setSort_id(Integer sort_id) {
         this.sort_id = sort_id;
     }
 
@@ -142,11 +153,14 @@ public class Article implements Serializable {
         return "Article{" +
                 "article_id=" + article_id +
                 ", user_id=" + user_id +
-                ", article_content='" + article_content + '\'' +
                 ", article_title='" + article_title + '\'' +
+                ", article_views=" + article_views +
+                ", article_comment_count=" + article_comment_count +
+                ", article_content='" + article_content + '\'' +
                 ", article_keyword='" + article_keyword + '\'' +
                 ", article_describe='" + article_describe + '\'' +
                 ", sort_id='" + sort_id + '\'' +
+                ", sort_name='" + sort_name + '\'' +
                 ", label_name='" + label_name + '\'' +
                 ", article_date=" + article_date +
                 ", article_like_count=" + article_like_count +

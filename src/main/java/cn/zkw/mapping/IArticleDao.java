@@ -9,8 +9,11 @@ public interface IArticleDao {
     Integer addArticle(Article article);
 
     //分页查询
-    List<Article> splitArticle(Integer cp);
+    List<Article> splitArticle(Integer num);
 
     //文章总数量
     Integer selectArticleAllNum();
+
+    //首页分页预览查询,num为查询的条数,以最新发布的文章开始排序
+    List<Article> preSplitArticle(Integer num);
 }

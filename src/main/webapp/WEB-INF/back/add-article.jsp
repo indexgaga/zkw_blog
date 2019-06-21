@@ -145,7 +145,7 @@
               <h2 class="add-article-box-title"><span>发布</span></h2>
               <div class="add-article-box-content">
               	<p><label>状态：</label><span class="article-status-display">未发布</span></p>
-                <p><label>公开度：</label><input type="radio" name="visibility" value="0" checked/>公开 <input type="radio" name="visibility" value="1" />加密</p>
+                <p><label>公开度：</label><input type="radio" name="article_ispublic" value="1" checked/>公开<input type="radio"  name="article_ispublic" value="0" />加密</p>
                 <p><label>发布于：</label><span class="article-time-display"><input style="border: none;" type="datetime" name="time" value="${date}" /></span></p>
               </div>
               <div class="add-article-box-footer">

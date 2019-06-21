@@ -2,10 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="cn.zkw.mapping.IArticleDao">
-
-	<!--分页查询-->
+     <!--ias滚动加载-->
 	<select id="splitArticle" parameterType="Integer" resultType="Article">
-		SELECT * FROM article LIMIT #{cp},5
+		SELECT article.article_id,article_title,article_views,article_like_count,article_img,article_date,article_describe,sort.sort_name FROM article
+		JOIN set_article_sort on article.article_id = set_article_sort.article_id
+		JOIN sort on set_article_sort.sort_id = sort.sort_id
+		WHERE article.article_ispublic=1 AND article.article_id=set_article_sort.article_id AND sort.sort_id = set_article_sort.sort_id
+		order by article.article_id desc
+		LIMIT #{num},5
+	</select>
+
+
+	<!--前台分页预览查询,暂时没有用到-->
+	<select id="preSplitArticle" parameterType="Integer" resultType="Article">
+		SELECT article.article_id,article_title,article_views,article_like_count,article_img,article_date,sort.sort_name FROM article
+		JOIN set_article_sort on article.article_id = set_article_sort.article_id
+		JOIN sort on set_article_sort.sort_id = sort.sort_id
+		WHERE article.article_ispublic=1
+		order by article.article_id desc
+		limit 0,#{num}
 	</select>
 
 	<select id="selectArticleAllNum" resultType="Integer">
@@ -13,7 +28,7 @@
 	</select>
 
 	<!--文章添加-->
-	<insert id="addArticle" parameterType="Article">
+	<insert id="addArticle" useGeneratedKeys="true" keyProperty="article_id"  parameterType="Article">
 		INSERT INTO article(
 		article_id,user_id,article_title,article_content,article_date,article_describe,article_ispublic,article_keyword,article_img
 		) VALUES(

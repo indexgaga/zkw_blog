@@ -1,24 +1,25 @@
 package cn.zkw.controller.back;
 
 import cn.zkw.service.ArticleService;
+import cn.zkw.service.SortService;
 import cn.zkw.service.UserService;
 import cn.zkw.util.action.AbstractAction;
 import cn.zkw.vo.Article;
 import cn.zkw.vo.User;
-import net.sf.json.JSON;
 import net.sf.json.JSONObject;
+import org.apache.commons.collections.map.HashedMap;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/back/article")
@@ -29,32 +30,47 @@ public class ArticleController extends AbstractAction {
     @Autowired
     UserService userService;
 
+    @Autowired
+    SortService sortService;
 
-    @RequestMapping(value = "/page/{nextPage}")
-    public @ResponseBody Object splitArticle(@PathVariable int nextPage){
-        JSONObject jsonObject = new JSONObject();
+    //滚动加载
+    @RequestMapping(value = "/page")
+    public String splitArticle(Integer nextPage, Model model,HttpServletRequest request){
+        if(nextPage ==null){
+            nextPage = 0;
+        }
         List<Article> articles = articleService.splitArticle(nextPage);
-        jsonObject.put("articles",articles);  //获取文章
+        model.addAttribute("articles",articles);  //获取文章
         //总数
         int count = articleService.getArticleAllNum();
         //总页数
         int pageNum = count / 5;
-        jsonObject.put("pageNum",pageNum);
-
+        model.addAttribute("pageNum",pageNum);
         if (pageNum > nextPage) {
-            jsonObject.put("nextPage", nextPage + 1);
+            model.addAttribute("nextPage", nextPage + 5);
+        }else{
+            model.addAttribute("nextPage", nextPage + 5);
+//            model.addAttribute("articles",null);  //获取文章
         }
-        return jsonObject;
+        return "front/index";
     }
 
-    //添加文章
+    //添加文章,,需要登录认证
     @RequestMapping(value = "/add",method = RequestMethod.POST)
     public ModelAndView addArticle(Article article){
         User user =  userService.getUserByName(String.valueOf(SecurityUtils.getSubject().getPrincipal()));  //查询当前用户的id
-        article.setUser_id(user.getUser_id());
-        article.setArticle_date(new Date());
-        articleService.addArticle(article);
-        System.out.println(article);
+        article.setUser_id(user.getUser_id());  //获取用户id
+        article.setArticle_date(new Date());  //添加文章当前日期
+        System.out.println(article);  //输出
+        articleService.addArticle(article);  //执行添加
+        Integer article_id = article.getArticle_id();
+        Map<String,Integer> map = new HashedMap();
+        map.put("article_id",article_id);
+        map.put("sort_id",article.getSort_id());
+        if(sortService.addSet_article_sort(map)>=1){
+            System.out.println("add success****************8");
+        };
+        System.out.println(article_id);
         return null;
     }
 

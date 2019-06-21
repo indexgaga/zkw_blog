@@ -6,4 +6,9 @@
 	<select id="findAllSort" resultType="Sort">
 		SELECT * FROM sort;
 	</select>
+	
+	<!--添加文章与sort的关系-->
+	<insert id="addSet_article_sort" parameterType="Map">
+		INSERT INTO set_article_sort(article_id,sort_id) VALUES(#{article_id},#{sort_id})
+	</insert>
 </mapper>  

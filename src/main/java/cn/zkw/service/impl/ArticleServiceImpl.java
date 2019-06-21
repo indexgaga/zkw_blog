@@ -15,9 +15,8 @@ public class ArticleServiceImpl implements ArticleService {
     public IArticleDao dao;
 
     @Override
-    public boolean addArticle(Article article) {
-        System.out.println(dao);
-        return dao.addArticle(article)>=1;
+    public Integer addArticle(Article article) {
+        return dao.addArticle(article);
     }
 
     @Override
@@ -29,4 +28,10 @@ public class ArticleServiceImpl implements ArticleService {
     public Integer getArticleAllNum() {
         return dao.selectArticleAllNum();
     }
+
+    @Override
+    public List<Article> preSplitArticle(Integer num) {
+        return dao.preSplitArticle(num);
+    }
+
 }

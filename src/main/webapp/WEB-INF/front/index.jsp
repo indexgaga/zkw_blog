@@ -73,7 +73,9 @@
         <div class="more"><a href="">java</a><a href="">JavaScript</a><a href="">EmpireCMS</a><a href="">Apache</a><a href="">MySQL</a></div>
       </div>
       <%--文章列表--%>
-      <article class="excerpt excerpt-0"  style="display: none;visibility: hidden;"></article>
+      <c:if test="${articles==null}">
+        <article class="excerpt excerpt-0"  style="display: none;visibility: hidden;"></article>
+      </c:if>
 
       <c:forEach items="${articles}" var="article">
         <article class="excerpt excerpt-1"><a class="focus" href="article.jsp" title=""><img class="thumb" data-original="${article.article_img}" src="${article.article_img}" alt=""></a>

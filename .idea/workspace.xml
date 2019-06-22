@@ -8,22 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7bf92cd4-da2a-4fbd-beab-5af5f3a14cc6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zkw/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/zkw/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zkw/controller/back/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/zkw/controller/back/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zkw/mapping/IArticleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/zkw/mapping/IArticleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zkw/mapping/ISortDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/zkw/mapping/ISortDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zkw/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/zkw/service/ArticleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zkw/service/SortService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/zkw/service/SortService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zkw/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/zkw/service/impl/ArticleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zkw/service/impl/SortServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/zkw/service/impl/SortServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zkw/vo/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/zkw/vo/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cn.zkw.mapping/Article.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cn.zkw.mapping/Article.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/cn.zkw.mapping/Sort.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cn.zkw.mapping/Sort.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/back/add-article.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/back/add-article.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/front/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/front/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/zkw_blog/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/zkw_blog/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/zkw_blog/WEB-INF/back/add-article.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/zkw_blog/WEB-INF/back/add-article.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/zkw_blog/WEB-INF/front/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/zkw_blog/WEB-INF/front/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/zkw/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/zkw/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/zkw_blog/WEB-INF/classes/cn/zkw/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/zkw_blog/WEB-INF/classes/cn/zkw/controller/UserController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/front/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
-              <caret line="75" column="82" selection-start-line="75" selection-start-column="82" selection-end-line="75" selection-end-column="82" />
+            <state relative-caret-position="305">
+              <caret line="75" column="34" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
               <folding>
                 <element signature="n#style#0;n#article#1;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -507,7 +494,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561109295550" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561199351339" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -742,7 +729,7 @@
       <workItem from="1560794515709" duration="6481000" />
       <workItem from="1560823972689" duration="1608000" />
       <workItem from="1560825676432" duration="685000" />
-      <workItem from="1560826638407" duration="75940000" />
+      <workItem from="1560826638407" duration="76731000" />
     </task>
     <task id="LOCAL-00001" summary="更新">
       <created>1558974489157</created>
@@ -842,11 +829,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561024490668</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="优化了文章滚动加载">
+      <created>1561109331557</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1561109331557</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="280819000" />
+    <option name="totallyTimeSpent" value="281610000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -861,7 +855,7 @@
     <frame x="-7" y="0" width="1614" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22072072" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22072072" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -871,7 +865,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32967034" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49550128" visible="true" weight="0.18080668" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49550128" visible="true" weight="0.18080668" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -925,7 +919,8 @@
     <MESSAGE value="添加了富文本编辑器" />
     <MESSAGE value="文章的添加" />
     <MESSAGE value="滚动加载基础配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="滚动加载基础配置" />
+    <MESSAGE value="优化了文章滚动加载" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化了文章滚动加载" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back/add-flink.jsp">
@@ -1336,8 +1331,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/front/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="75" column="82" selection-start-line="75" selection-start-column="82" selection-end-line="75" selection-end-column="82" />
+        <state relative-caret-position="305">
+          <caret line="75" column="34" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
           <folding>
             <element signature="n#style#0;n#article#1;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>

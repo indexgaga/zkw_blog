@@ -2,6 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 <mapper namespace="cn.zkw.mapping.IArticleDao">
+	<select id="selectArticleById" resultType="Article" parameterType="Integer">
+		SELECT * FROM article WHERE article_id=#{article_id}
+	</select>
+
+
      <!--ias滚动加载-->
 	<select id="splitArticle" parameterType="Integer" resultType="Article">
 		SELECT article.article_id,article_title,article_views,article_like_count,article_img,article_date,article_describe,sort.sort_name FROM article

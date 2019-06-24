@@ -34,4 +34,9 @@ public class ArticleServiceImpl implements ArticleService {
         return dao.preSplitArticle(num);
     }
 
+    @Override
+    public Article selectArticleById(Integer article_id) {
+        return dao.selectArticleById(article_id);
+    }
+
 }

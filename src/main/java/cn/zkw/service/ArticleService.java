@@ -14,4 +14,6 @@ public interface ArticleService {
     public Integer getArticleAllNum();
 
     public List<Article> preSplitArticle(Integer num);
+
+    public Article selectArticleById(Integer article_id);
 }

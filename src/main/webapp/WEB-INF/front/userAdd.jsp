@@ -51,7 +51,6 @@
                 <label for="user_nickname">昵称</label>
                 <input style="display:inline" type="text" id="user_nickname" name="user_nickname" class="form-control" placeholder="昵称" required autofocus>
             </div><br>
-
             <div id="user_name_div">
                 <label for="user_name">账号</label>
                 <input type="text" id="user_name" name="user_name" class="form-control" maxlength="15" minlength="4" class="form-control" placeholder="账号" required autofocus>

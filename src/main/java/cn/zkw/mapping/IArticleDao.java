@@ -16,4 +16,7 @@ public interface IArticleDao {
 
     //首页分页预览查询,num为查询的条数,以最新发布的文章开始排序
     List<Article> preSplitArticle(Integer num);
+
+    //根据id查询文章
+    Article selectArticleById(Integer article_id);
 }

@@ -80,7 +80,7 @@
       <c:forEach items="${articles}" var="article">
         <article class="excerpt excerpt-1"><a class="focus" href="article.jsp" title=""><img class="thumb" data-original="${article.article_img}" src="${article.article_img}" alt=""></a>
           <header><a class="cat" href="program">${article.sort_name}<i></i></a>
-            <h2><a href="article.jsp" title="">${article.article_title}</a></h2>
+            <h2><a href="<%=request.getContextPath()%>/front/article?article_id=${article.article_id}" title="">${article.article_title}</a></h2>
           </header>
           <p class="meta">
             <time class="time"><i class="glyphicon glyphicon-time"></i><fmt:formatDate value="${article.article_date}" pattern="yyyy-MM-dd HH:mm:ss" /></time>

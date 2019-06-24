@@ -7,10 +7,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bf92cd4-da2a-4fbd-beab-5af5f3a14cc6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/zkw/controller/ShiroController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zkw/controller/ControllerUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/zkw/controller/ControllerUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zkw/mapping/IArticleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/zkw/mapping/IArticleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zkw/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/zkw/service/ArticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/zkw/service/impl/ArticleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/zkw/service/impl/ArticleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/cn.zkw.mapping/Article.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/cn.zkw.mapping/Article.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/front/article.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/front/article.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/front/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/front/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/cn/zkw/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/zkw/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/zkw_blog/WEB-INF/classes/cn/zkw/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/zkw_blog/WEB-INF/classes/cn/zkw/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/front/userAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/front/userAdd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/zkw/controller/ControllerUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/zkw/controller/ControllerUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/zkw_blog.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/zkw_blog.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/zkw_blog/WEB-INF/classes/cn/zkw/controller/ControllerUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/zkw_blog/WEB-INF/classes/cn/zkw/controller/ControllerUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/zkw_blog/WEB-INF/front/article.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/zkw_blog/WEB-INF/front/article.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/zkw_blog/WEB-INF/front/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/zkw_blog/WEB-INF/front/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/zkw_blog/WEB-INF/front/userAdd.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/zkw_blog/WEB-INF/front/userAdd.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/zkw_blog/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/zkw_blog/css/style.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,137 +37,107 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/controller/back/ArticleController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/controller/ControllerUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="50" column="14" lean-forward="true" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+            <state relative-caret-position="-4">
+              <caret line="30" column="43" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/controller/back/ArticleController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1100">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/applicationShiro.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/front/index.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/controller/ShiroController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="75" column="34" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
-              <folding>
-                <element signature="n#style#0;n#article#1;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/cn.zkw.mapping/Sort.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="10" column="35" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/mapping/ISortDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="13" column="50" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
+            <state relative-caret-position="175">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#230#231#0" expanded="true" />
+                <element signature="e#257#258#0" expanded="true" />
+                <element signature="e#311#312#0" expanded="true" />
+                <element signature="e#338#339#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/vo/Sort.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/front/article.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#349#350#0" expanded="true" />
-                <element signature="e#379#380#0" expanded="true" />
-                <element signature="e#426#427#0" expanded="true" />
-                <element signature="e#464#465#0" expanded="true" />
-                <element signature="e#500#501#0" expanded="true" />
-                <element signature="e#532#533#0" expanded="true" />
-                <element signature="e#582#583#0" expanded="true" />
-                <element signature="e#624#625#0" expanded="true" />
-                <element signature="e#661#662#0" expanded="true" />
-                <element signature="e#694#695#0" expanded="true" />
-                <element signature="e#746#747#0" expanded="true" />
-                <element signature="e#790#791#0" expanded="true" />
-                <element signature="e#833#834#0" expanded="true" />
-                <element signature="e#872#873#0" expanded="true" />
-                <element signature="e#936#937#0" expanded="true" />
-                <element signature="e#992#993#0" expanded="true" />
-                <element signature="e#1033#1034#0" expanded="true" />
-                <element signature="e#1070#1071#0" expanded="true" />
-                <element signature="e#1130#1131#0" expanded="true" />
-                <element signature="e#1182#1183#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="175">
+              <caret line="19" column="84" selection-start-line="19" selection-start-column="84" selection-end-line="19" selection-end-column="84" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/vo/Article.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-741">
-              <caret line="102" column="33" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2710#2711#0" expanded="true" />
-                <element signature="e#2757#2758#0" expanded="true" />
-                <element signature="e#2795#2796#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/cn.zkw.mapping/Article.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/service/ArticleService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/service/SortService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
-              <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
+              <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/service/impl/SortServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/css/nprogress.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="24" column="42" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
+            <state relative-caret-position="-1350" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/back/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/controller/UserController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-80">
+              <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#563#564#0" expanded="true" />
-                <element signature="e#615#616#0" expanded="true" />
+                <element signature="e#8445#8446#0" expanded="true" />
+                <element signature="e#8481#8482#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/action/filter/CustomerFormAuthenticationFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -183,6 +167,8 @@
       <find>ias</find>
       <find>index</find>
       <find>artitle</find>
+      <find>article</find>
+      <find>content</find>
     </findStrings>
     <replaceStrings>
       <replace>java</replace>
@@ -200,18 +186,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cn/zkw/realm/MemberRealm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zkw/realm/cre/CustomerCredentialsMatcher.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/applicationShiro.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/front/userAdd.html" />
         <option value="$PROJECT_DIR$/src/main/resources/database.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/jquery.ias.js" />
         <option value="$PROJECT_DIR$/src/main/resources/applicationMVC.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/model.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/front/userAdd.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/tip.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/tip.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zkw/controller/ControllerUtil.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/front/tip.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/userAdd.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/front/head.jsp" />
@@ -238,19 +218,25 @@
         <option value="$PROJECT_DIR$/src/main/java/cn/zkw/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/scripts.js" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zkw/mapping/IUserDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zkw/mapping/IArticleDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zkw/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/back/add-article.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zkw/service/ArticleService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/zkw/service/impl/ArticleServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/cn.zkw.mapping/Sort.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zkw/service/SortService.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zkw/service/impl/SortServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zkw/mapping/ISortDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zkw/vo/Article.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/cn.zkw.mapping/Article.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/zkw/controller/back/ArticleController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/cn.zkw.mapping/Article.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/zkw/mapping/IArticleDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/zkw/service/ArticleService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/zkw/service/impl/ArticleServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/front/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/zkw/controller/ControllerUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/front/userAdd.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/front/article.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/back/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/style.css" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/zkw/controller/ShiroController.java" />
       </list>
     </option>
   </component>
@@ -274,10 +260,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="1614" />
-    <option name="height" value="877" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="3" />
+    <option name="width" value="1600" />
+    <option name="height" value="845" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -347,17 +333,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="zkw" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="back" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="zkw_blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zkw_blog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="zkw" type="462c0819:PsiDirectoryNode" />
-              <item name="mapping" type="462c0819:PsiDirectoryNode" />
+              <item name="realm" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="zkw_blog" type="b2602c69:ProjectViewProjectNode" />
@@ -375,8 +351,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="zkw" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="zkw_blog" type="b2602c69:ProjectViewProjectNode" />
@@ -423,7 +398,27 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="back" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zkw_blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zkw_blog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="back" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="zkw_blog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zkw_blog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="back" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="ueditor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="zkw_blog" type="b2602c69:ProjectViewProjectNode" />
@@ -492,9 +487,13 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="zkw_blog" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561199351339" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561366470461" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
@@ -729,7 +728,7 @@
       <workItem from="1560794515709" duration="6481000" />
       <workItem from="1560823972689" duration="1608000" />
       <workItem from="1560825676432" duration="685000" />
-      <workItem from="1560826638407" duration="76731000" />
+      <workItem from="1560826638407" duration="92465000" />
     </task>
     <task id="LOCAL-00001" summary="更新">
       <created>1558974489157</created>
@@ -836,11 +835,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561109331557</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="优化了文章滚动加载 6/22">
+      <created>1561200765066</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1561200765066</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="281610000" />
+    <option name="totallyTimeSpent" value="297344000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -852,10 +858,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1614" height="877" extended-state="0" />
+    <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22072072" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22043702" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -865,7 +871,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32967034" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49550128" visible="true" weight="0.18080668" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4954955" visible="true" weight="0.31868133" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -874,7 +880,7 @@
       <window_info anchor="bottom" id="Application Servers" order="8" weight="0.32991204" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49678662" weight="0.32967034" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5044987" side_tool="true" weight="0.21840659" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5045045" side_tool="true" weight="0.36856747" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49932975" weight="0.32005495" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32991204" />
       <window_info anchor="bottom" id="Database Changes" order="14" />
@@ -920,52 +926,10 @@
     <MESSAGE value="文章的添加" />
     <MESSAGE value="滚动加载基础配置" />
     <MESSAGE value="优化了文章滚动加载" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化了文章滚动加载" />
+    <MESSAGE value="优化了文章滚动加载 6/22" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化了文章滚动加载 6/22" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back/add-flink.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-450" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back/readset.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2625" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back/notice.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-975" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back/category.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1500" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back/comment.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-666" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back/aside.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="42" column="8" selection-start-line="42" selection-start-column="8" selection-end-line="42" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/back/lib/ueditor/index.html" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back/head.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="775">
@@ -993,13 +957,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/front/userAdd.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3100">
-          <caret line="124" selection-start-line="124" selection-end-line="124" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/util/file/UploadFileUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -1010,31 +967,10 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/uploadFiles/userPhoto/nophoto.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/front/readers.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/front/user_details.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="133" column="14" selection-start-line="133" selection-start-column="14" selection-end-line="133" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/util/action/AbstractAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/front/article.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1059,13 +995,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/vo/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back/article.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -1073,24 +1002,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/front/links.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-350">
-          <caret line="40" column="37" lean-forward="true" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/front/tags.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
           <caret line="90" column="13" lean-forward="true" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/action/filter/CustomerFormAuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1118,24 +1033,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/controller/back/BackController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#578#579#0" expanded="true" />
-            <element signature="e#613#614#0" expanded="true" />
-            <element signature="e#1247#1248#0" expanded="true" />
-            <element signature="e#1285#1286#0" expanded="true" />
-            <element signature="e#1330#1331#0" expanded="true" />
-            <element signature="e#1357#1358#0" expanded="true" />
-            <element signature="e#1411#1412#0" expanded="true" />
-            <element signature="e#1438#1439#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/cn.zkw.mapping/User.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -1150,36 +1047,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/controller/ControllerUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/images/excerpt.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="134" column="11" lean-forward="true" selection-start-line="134" selection-start-column="11" selection-end-line="134" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="232" column="38" lean-forward="true" selection-start-line="232" selection-start-column="38" selection-end-line="232" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8481#8482#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1188,55 +1057,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back/add-article.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="109" column="22" lean-forward="true" selection-start-line="109" selection-start-column="22" selection-end-line="109" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/mapping/IArticleDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/service/impl/ArticleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#439#440#0" expanded="true" />
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#588#589#0" expanded="true" />
-            <element signature="e#631#632#0" expanded="true" />
-            <element signature="e#686#687#0" expanded="true" />
-            <element signature="e#734#735#0" expanded="true" />
-            <element signature="e#805#806#0" expanded="true" />
-            <element signature="e#852#853#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/cn.zkw.mapping/Sort.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="10" column="35" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/service/ArticleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1272,7 +1096,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/vo/Sort.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#349#350#0" expanded="true" />
@@ -1299,12 +1123,149 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/vo/Article.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/front/readers.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-741">
-          <caret line="102" column="33" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
+        <state relative-caret-position="-2800">
+          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/front/links.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="40" column="37" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/front/tip.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/service/ArticleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="17" column="57" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/service/impl/ArticleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="38" column="49" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#439#440#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+            <element signature="e#890#891#0" expanded="true" />
+            <element signature="e#915#916#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/cn.zkw.mapping/Article.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-125">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/snow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2846">
+          <caret line="134" column="11" lean-forward="true" selection-start-line="134" selection-start-column="11" selection-end-line="134" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="86" column="14" lean-forward="true" selection-start-line="70" selection-start-column="12" selection-end-line="86" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/mapping/IArticleDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/controller/back/BackController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#613#614#0" expanded="true" />
+            <element signature="e#1247#1248#0" expanded="true" />
+            <element signature="e#1285#1286#0" expanded="true" />
+            <element signature="e#1330#1331#0" expanded="true" />
+            <element signature="e#1357#1358#0" expanded="true" />
+            <element signature="e#1411#1412#0" expanded="true" />
+            <element signature="e#1438#1439#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/front/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1532">
+          <caret line="82" column="100" selection-start-line="82" selection-start-column="100" selection-end-line="82" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/back/add-article.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="109" column="22" selection-start-line="109" selection-start-column="22" selection-end-line="109" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/vo/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/realm/MemberRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/vo/Article.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2680#2681#0" expanded="true" />
             <element signature="e#2710#2711#0" expanded="true" />
             <element signature="e#2757#2758#0" expanded="true" />
             <element signature="e#2795#2796#0" expanded="true" />
@@ -1312,29 +1273,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/cn.zkw.mapping/Article.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/util/action/AbstractAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        <state relative-caret-position="237">
+          <caret line="224" column="5" lean-forward="true" selection-start-line="224" selection-start-column="5" selection-end-line="224" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/controller/back/ArticleController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/front/userAdd.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="50" column="14" lean-forward="true" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+        <state relative-caret-position="50">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/back/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="22" column="23" lean-forward="true" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/nprogress.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1350" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/front/article.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="19" column="84" selection-start-line="19" selection-start-column="84" selection-end-line="19" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-80">
+          <caret line="32" column="42" lean-forward="true" selection-start-line="32" selection-start-column="42" selection-end-line="32" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8445#8446#0" expanded="true" />
+            <element signature="e#8481#8482#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/action/filter/CustomerFormAuthenticationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/controller/ControllerUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="30" column="43" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/front/index.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/controller/back/ArticleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="75" column="34" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="34" />
+        <state relative-caret-position="-1100">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
-            <element signature="n#style#0;n#article#1;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationShiro.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/zkw/controller/ShiroController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#230#231#0" expanded="true" />
+            <element signature="e#257#258#0" expanded="true" />
+            <element signature="e#311#312#0" expanded="true" />
+            <element signature="e#338#339#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1345,7 +1382,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>zkw_blog:war</last-edited>
+          <last-edited>zkw_blog:war exploded</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

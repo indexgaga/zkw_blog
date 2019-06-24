@@ -16,7 +16,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 }
 html, body {
 	color: #444;
-	background-color: #f6f6f6;
+	/*background-color: #f6f6f6;*/
+	/*background-color: #fbeed5;*/
+	background-color: #f4fbdc;
 	overflow-x: hidden;
 }
 /*页面滚动条*/

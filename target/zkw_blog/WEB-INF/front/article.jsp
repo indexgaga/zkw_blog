@@ -1,4 +1,6 @@
+<%@ page import="cn.zkw.vo.Article" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
 <%
   String path = request.getContextPath();      //上下文路径，/mldn
   //请求方式                    服务器名，地址                          端口
@@ -13,20 +15,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>清歌一片文章页面</title>
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/css/nprogress.css">
-<link rel="stylesheet" type="text/css" href="/css/style.css">
-<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
-<link rel="apple-touch-icon-precomposed" href="/images/icon/icon.png">
-<link rel="shortcut icon" href="/images/icon/favicon.ico">
-<script src="/js/jquery-2.1.4.min.js"></script>
-<script src="/js/nprogress.js"></script>
-<script src="/js/jquery.lazyload.min.js"></script>
-<!--[if gte IE 9]>
-  <script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
-  <script src="/js/html5shiv.min.js" type="text/javascript"></script>
-  <script src="/js/respond.min.js" type="text/javascript"></script>
-  <script src="/js/selectivizr-min.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/nprogress.css">
+  <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/style.css">
+  <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/font-awesome.min.css">
+  <link rel="apple-touch-icon-precomposed" href="<%=request.getContextPath()%>/images/icon/icon.png">
+  <link rel="shortcut icon" href="<%=request.getContextPath()%>/images/icon/favicon.ico">
+  <script src="<%=request.getContextPath()%>/js/jquery-2.1.4.min.js"></script>
+  <script src="<%=request.getContextPath()%>/js/nprogress.js"></script>
+  <script src="<%=request.getContextPath()%>/js/jquery.lazyload.min.js"></script>
+  <script src="<%=request.getContextPath()%>/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+  <script src="<%=request.getContextPath()%>/js/html5shiv.min.js" type="text/javascript"></script>
+  <script src="<%=request.getContextPath()%>/js/respond.min.js" type="text/javascript"></script>
+  <script src="<%=request.getContextPath()%>/js/selectivizr-min.js" type="text/javascript"></script>
+  <script src="<%=request.getContextPath()%>/back/lib/ueditor/ueditor.parse.js" type="text/javascript"></script>
 <![endif]-->
 <!--[if lt IE 9]>
   <script>window.location.href='upgrade-browser.html';</script>
@@ -34,72 +36,18 @@
 </head>
 
 <body class="user-select single">
-<header class="header">
-  <nav class="navbar navbar-default" id="navbar">
-    <div class="container">
-      <div class="header-topbar hidden-xs link-border">
-        <ul class="site-nav topmenu">
-          <li><a href="tags.jsp">标签云</a></li>
-          <li><a href="readers.jsp" rel="nofollow">读者墙</a></li>
-          <li><a href="links.jsp" rel="nofollow">友情链接</a></li>
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" rel="nofollow">关注本站 <span class="caret"></span></a>
-            <ul class="dropdown-menu header-topbar-dropdown-menu">
-              <li><a data-toggle="modal" data-target="#WeChat" rel="nofollow"><i class="fa fa-weixin"></i> 微信</a></li>
-              <li><a href="#" rel="nofollow"><i class="fa fa-weibo"></i> 微博</a></li>
-              <li><a data-toggle="modal" data-target="#areDeveloping" rel="nofollow"><i class="fa fa-rss"></i> RSS</a></li>
-            </ul>
-          </li>
-        </ul>
-        <a href="javascript:;" class="login" rel="nofollow">Hi,请登录</a>&nbsp;&nbsp;<a href="javascript:;" class="register" rel="nofollow">我要注册</a>&nbsp;&nbsp;<a href="" rel="nofollow">找回密码</a> </div>
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar" aria-expanded="false"> <span class="sr-only"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-        <h1 class="logo hvr-bounce-in"><a href="" title=""><img src="images/logo.png" alt=""></a></h1>
-      </div>
-      <div class="collapse navbar-collapse" id="header-navbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="hidden-index active"><a data-cont="异清轩首页" href="index.jsp">异清轩首页</a></li>
-          <li><a href="category.jsp">前端技术</a></li>
-          <li><a href="category.jsp">后端程序</a></li>
-          <li><a href="category.jsp">管理系统</a></li>
-          <li><a href="category.jsp">授人以渔</a></li>
-          <li><a href="category.jsp">程序人生</a></li>
-        </ul>
-        <form class="navbar-form visible-xs" action="/Search" method="post">
-          <div class="input-group">
-            <input type="text" name="keyword" class="form-control" placeholder="请输入关键字" maxlength="20" autocomplete="off">
-            <span class="input-group-btn">
-            <button class="btn btn-default btn-search" name="search" type="submit">搜索</button>
-            </span> </div>
-        </form>
-      </div>
-    </div>
-  </nav>
-</header>
+<jsp:include page="head.jsp" />
 <section class="container">
   <div class="content-wrap">
     <div class="content">
       <header class="article-header">
-        <h1 class="article-title"><a href="article.jsp">php如何判断一个日期的格式是否正确</a></h1>
+        <h1 class="article-title"><a href="article.jsp">${article.article_title}</a></h1>
         <div class="article-meta"> <span class="item article-meta-time">
           <time class="time" data-toggle="tooltip" data-placement="bottom" title="时间：2016-1-4 10:29:39"><i class="glyphicon glyphicon-time"></i> 2016-1-4 10:29:39</time>
           </span> <span class="item article-meta-source" data-toggle="tooltip" data-placement="bottom" title="来源：第一PHP社区"><i class="glyphicon glyphicon-globe"></i> 第一PHP社区</span> <span class="item article-meta-category" data-toggle="tooltip" data-placement="bottom" title="栏目：后端程序"><i class="glyphicon glyphicon-list"></i> <a href="program" title="">后端程序</a></span> <span class="item article-meta-views" data-toggle="tooltip" data-placement="bottom" title="查看：120"><i class="glyphicon glyphicon-eye-open"></i> 共120人围观</span> <span class="item article-meta-comment" data-toggle="tooltip" data-placement="bottom" title="评论：0"><i class="glyphicon glyphicon-comment"></i> 0个不明物体</span> </div>
       </header>
-      <article class="article-content">
-        <p><img data-original="images/banner/banner_03.jpg" src="images/banner/banner_03.jpg" alt="" /></p>
-        <p> 用php获取上个月最后一天的时间，有两种方法，都非常简单，详细实现源码如下： </p>
-        <pre class="prettyprint lang-php">&lt;?php
-  date_default_timezone_set("PRC"); //设置时区
-  //方法一
-  $times = date("d") * 24 * 3600;
-  echo date("Y-m-d H:i:s", time()-$times);
-  echo '&lt;br/&gt;';
-  //方法二
-  $day = date('d');
-  echo date("Y-m-d H:i:s", strtotime(-$day.' day'));
-?&gt;</pre>
-        <p> 方法一是利用当前时间离本月初有多少时间，然后用当前时间减去这个时间差，就可以得到上月最后一天了。 </p>
-        <p> 方法二是先计算本月多少号，即离月初有多少天，然后用strtotime计算出$day天前的时间戳，也可以得到上个月的最后一天。 </p>
-        <p class="article-copyright hidden-xs">未经允许不得转载：<a href="">异清轩博客</a> » <a href="article.jsp">php如何判断一个日期的格式是否正确</a></p>
+      <article class="article-content1" >
+        <%=request.getAttribute("article_content")%>
       </article>
       <div class="article-tags">标签：<a href="" rel="tag">PHP</a></div>
       <div class="relates">
@@ -263,10 +211,10 @@
     <li class="list-group-item"><span>浏览器：</span>Chrome47</li>
   </ul>
 </div>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/jquery.ias.js"></script>
-<script src="/js/scripts.scripts.jsp"></script>
-<script src="/js/jquery.qqFace.js"></script>
+<script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
+<script src="<%=request.getContextPath()%>/js/jquery.ias.js"></script>
+<script src="<%=request.getContextPath()%>/js/scripts.js"></script>
+<script src="<%=request.getContextPath()%>/js/jquery.qqFace.js"></script>
 <script type="text/javascript">
 $(function(){
 	$('.emotion').qqFace({
@@ -274,7 +222,13 @@ $(function(){
 		assign:'comment-textarea', 
 		path:'/Home/images/arclist/'	//表情存放的路径
 	});
- });   
+
+  uParse('.article-content1', {
+    rootPath: '../'
+  })
+ });
+
+
 </script>
 </body>
 </html>

@@ -29,6 +29,12 @@
   <script src="<%=request.getContextPath()%>/js/respond.min.js" type="text/javascript"></script>
   <script src="<%=request.getContextPath()%>/js/selectivizr-min.js" type="text/javascript"></script>
   <script src="<%=request.getContextPath()%>/back/lib/ueditor/ueditor.parse.js" type="text/javascript"></script>
+  <!-- night代码高亮 -->
+  <%--<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/night/styles/tomorrow-night-eighties.css">--%>
+  <%--<script type="text/javascript" src="<%=request.getContextPath()%>/night/highlight.pack.js"></script>--%>
+  <link rel="stylesheet" href="<%=request.getContextPath()%>/night/styles/default.css">
+  <script src="<%=request.getContextPath()%>/night/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 <![endif]-->
 <!--[if lt IE 9]>
   <script>window.location.href='upgrade-browser.html';</script>
@@ -228,7 +234,13 @@ $(function(){
   })
  });
 
-
+var allpre = document.getElementsByTagName("pre");
+for(i = 0; i < allpre.length; i++)
+{
+  var onepre = document.getElementsByTagName("pre")[i];
+  var mycode = document.getElementsByTagName("pre")[i].innerHTML;
+  onepre.innerHTML = '<code id="mycode">'+mycode+'</code>';
+}
 </script>
 </body>
 </html>

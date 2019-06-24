@@ -184,9 +184,7 @@ public class UserController extends AbstractAction {
         JSONObject json = new JSONObject();
         json.put("code", 200);
         json.put("msg", "登陆成功");
-        System.out.println("username=" + user.getUser_name());
-//        User vo = service.getUserByName(user.getUser_name());
-        System.out.println(user);
+
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(user.getUser_name(), user.getUser_password());
         try {
@@ -206,6 +204,12 @@ public class UserController extends AbstractAction {
         return json;
     }
 
+
+    /**
+     * 获取ip
+     * @param request
+     * @return
+     */
     public String getIp2(HttpServletRequest request) {
         String ip = request.getHeader("X-Forwarded-For");
         if (StringUtils.isNotEmpty(ip) && !"unKnown".equalsIgnoreCase(ip)) {

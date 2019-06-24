@@ -107,4 +107,6 @@
 	<mvc:resources mapping="/uploadFiles/userPhoto/**" location="/uploadFiles/userPhoto/" />
 	<mvc:resources mapping="/uploadFiles/atricleImg/**" location="/uploadFiles/atricleImg/" />
 
+	<!--文章代码高亮-->
+	<mvc:resources mapping="/night/**" location="/night/" />
 </beans>

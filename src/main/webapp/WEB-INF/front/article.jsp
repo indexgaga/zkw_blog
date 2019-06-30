@@ -1,6 +1,8 @@
 <%@ page import="cn.zkw.vo.Article" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%
   String path = request.getContextPath();      //上下文路径，/mldn
   //请求方式                    服务器名，地址                          端口
@@ -9,7 +11,7 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <base href="<%=basePath%>">
+<base href="<%=basePath%>">
 <meta charset="utf-8">
 <meta name="renderer" content="webkit">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,16 +25,18 @@
   <link rel="shortcut icon" href="<%=request.getContextPath()%>/images/icon/favicon.ico">
   <script src="<%=request.getContextPath()%>/js/jquery-2.1.4.min.js"></script>
   <script src="<%=request.getContextPath()%>/js/nprogress.js"></script>
+  <script src="<%=request.getContextPath()%>/js/jquery.qqFace.js"></script>
   <script src="<%=request.getContextPath()%>/js/jquery.lazyload.min.js"></script>
   <script src="<%=request.getContextPath()%>/js/jquery-1.11.1.min.js" type="text/javascript"></script>
   <script src="<%=request.getContextPath()%>/js/html5shiv.min.js" type="text/javascript"></script>
   <script src="<%=request.getContextPath()%>/js/respond.min.js" type="text/javascript"></script>
   <script src="<%=request.getContextPath()%>/js/selectivizr-min.js" type="text/javascript"></script>
   <script src="<%=request.getContextPath()%>/back/lib/ueditor/ueditor.parse.js" type="text/javascript"></script>
+
   <!-- night代码高亮 -->
   <%--<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/night/styles/tomorrow-night-eighties.css">--%>
   <%--<script type="text/javascript" src="<%=request.getContextPath()%>/night/highlight.pack.js"></script>--%>
-  <link rel="stylesheet" href="<%=request.getContextPath()%>/night/styles/default.css">
+  <link rel="stylesheet" href="<%=request.getContextPath()%>/night/styles/tomorrow-night-eighties.css">
   <script src="<%=request.getContextPath()%>/night/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
 <![endif]-->
@@ -82,12 +86,15 @@
         </div>
       </div>-->
       <div id="respond">
-        <form action="" method="post" id="comment-form">
+        <form action="<%=request.getContextPath()%>/comment/add" method="post" id="comment-form">
           <div class="comment">
-            <div class="comment-title"><img class="avatar" src="images/icon/icon.png" alt="" /></div>
+            <div class="comment-title">
+              <c:if test="${photo==null}"><img class="avatar" src="<%=request.getContextPath()%>/images/tourist.jpg" alt="" /></c:if>
+              <c:if test="${photo!=null}"><img class="avatar" src="<%=request.getContextPath()%>/uploadFiles/userPhoto/${photo}" alt="" /></c:if>
+            </div>
             <div class="comment-box">
-              <textarea placeholder="您的评论可以一针见血" name="comment" id="comment-textarea" cols="100%" rows="3" tabindex="1" ></textarea>
-              <div class="comment-ctrl"> <span class="emotion"><img src="images/face/5.png" width="20" height="20" alt="" />表情</span>
+              <textarea  contenteditable="true" placeholder="您的评论可以一针见血" name="comment_content" id="comment-textarea" cols="100%" rows="3" tabindex="1" ></textarea>
+              <div class="comment-ctrl"> <span class="emotion" id="emotion"><img src="images/face/5.png" width="20" height="20" alt="" />表情</span>
                 <div class="comment-prompt"> <i class="fa fa-spin fa-circle-o-notch"></i> <span class="comment-prompt-text"></span> </div>
                 <input type="hidden" value="1" class="articleid" />
                 <button type="submit" name="comment-submit" id="comment-submit" tabindex="5" articleid="1">评论</button>
@@ -97,17 +104,29 @@
         </form>
       </div>
       <div id="postcomments">
-        <ol class="commentlist">
-          <li class="comment-content"><span class="comment-f">#1</span>
-            <div class="comment-avatar"><img class="avatar" src="images/icon/icon.png" alt="" /></div>
-            <div class="comment-main">
-              <p>来自<span class="address">河南郑州</span>的用户<span class="time">(2016-01-06)</span><br />
-                这是匿名评论的内容这是匿名评论的内容，这是匿名评论的内容这是匿名评论的内容这是匿名评论的内容这是匿名评论的内容这是匿名评论的内容这是匿名评论的内容。</p>
-            </div>
-          </li>
+        <ol class="commentlist" id="commentList">
+          <c:forEach items="${listComment}" var="comment" varStatus="status">
+            <c:if test="${comment.user_id!=null}">
+              <li class="comment-content"><span class="comment-f">#${status.index}</span>
+                <div class="comment-avatar"><img class="avatar" src="<%=request.getContextPath()%>/uploadFiles/userPhoto/${comment.user_photo}" alt="" /></div>
+                <div class="comment-main">
+                  <p><span class="address">${comment.user_name}</span><span class="time"><fmt:formatDate value="${comment.comment_date}" pattern="yyyy-MM-dd HH:mm" /></span><br />
+                  <span class="comment_content_p">${comment.comment_content}</span></p>
+                </div>
+              </li>
+            </c:if>
+            <c:if test="${comment.user_id==null}">
+              <li class="comment-content"><span class="comment-f">#${status.index}</span>
+                <div class="comment-avatar"><img class="avatar" src="<%=request.getContextPath()%>/images/tourist.jpg" alt="" /></div>
+                <div class="comment-main">
+                  <p>来自<span class="address">${comment.user_name}</span>的用户<span class="time"><fmt:formatDate value="${comment.comment_date}" pattern="yyyy-MM-dd HH:mm" /></span><br />
+                    <span class="comment_content_p">${comment.comment_content}</span></p>
+                </div>
+              </li>
+            </c:if>
+          </c:forEach>
         </ol>
-        
-        <div class="quotes"><span class="disabled">首页</span><span class="disabled">上一页</span><a class="current">1</a><a href="">2</a><span class="disabled">下一页</span><span class="disabled">尾页</span></div>
+        <%--<div class="quotes"><span class="disabled">首页</span><span class="disabled">上一页</span><a class="current">1</a><a href="">2</a><span class="disabled">下一页</span><span class="disabled">尾页</span></div>--%>
       </div>
     </div>
   </div>
@@ -226,7 +245,7 @@ $(function(){
 	$('.emotion').qqFace({
 		id : 'facebox', 
 		assign:'comment-textarea', 
-		path:'/Home/images/arclist/'	//表情存放的路径
+		path:'<%=request.getContextPath()%>/images/arclist/'	//表情存放的路径
 	});
 
   uParse('.article-content1', {
@@ -241,6 +260,68 @@ for(i = 0; i < allpre.length; i++)
   var mycode = document.getElementsByTagName("pre")[i].innerHTML;
   onepre.innerHTML = '<code id="mycode">'+mycode+'</code>';
 }
+
+//qqface 评论中显示表情
+var comment_content = $(".comment_content_p");
+$.each(comment_content,function (n) {
+  // alert(($(this).search(']')));
+  if(($(this).text().search(']')>=0)){
+    $(this).html(replace_em($(this).text()));
+  }
+})
+//字符串替换,,插入图片,显示表情
+function replace_em(str) {
+  var start = str.indexOf("[");
+  var ent = str.indexOf("]");
+  var em = str.substring(start,ent+1);
+  var em_end = em.indexOf("]");
+  var em_id = em.substring(4,em_end);
+  str = str.replace(em,"<img src='<%=request.getContextPath()%>/images/arclist/"+em_id+".gif'>");
+  return str;
+}
+
+<%--// qqface--%>
+<%--$(function(){--%>
+  <%--$("#comment-textarea").bind(--%>
+          <%--'input',function(){  //兼容IE9及以上版本和其他浏览器--%>
+            <%--console.log('value changed!');--%>
+          <%--});--%>
+
+  <%--$('.emotion').qqFace({--%>
+
+    <%--id : 'facebox',--%>
+
+    <%--assign:'comment-textarea',--%>
+
+    <%--path:'<%=request.getContextPath()%>/images/arclist/'        //表情存放的路径--%>
+
+  <%--});--%>
+
+  <%--$(".emotion").click(function(){--%>
+
+    <%--var str = $("#comment-textarea").val();--%>
+    <%--console.log(str);--%>
+
+    <%--$("#comment-textarea").html(replace_em(str));--%>
+
+  <%--});--%>
+
+<%--});--%>
+
+<%--//查看结果--%>
+
+<%--function replace_em(str){--%>
+
+  <%--str = str.replace(/\</g,'<');--%>
+
+  <%--str = str.replace(/\>/g,'>');--%>
+
+  <%--str = str.replace(/\n/g,'<br/>');--%>
+
+  <%--str = str.replace(/\[em_([0-9]*)\]/g,'<img src="arclist/$1.gif" border="0" />');--%>
+
+  <%--return str;--%>
+<%--}--%>
 </script>
 </body>
 </html>

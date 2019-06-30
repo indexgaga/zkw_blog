@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="cn.zkw.mapping.ICommentDao">
+
+	<select id="selectCommentByArticleId" resultType="Comment" parameterType="Integer">
+		SELECT
+			user.user_photo,
+			user.user_id,
+			comment .user_name,
+			comment .comment_content,
+			comment .article_id,
+			comment .comment_like_count,
+			comment .parent_comment_id,
+			comment .comment_date
+		FROM
+			comment
+		left JOIN user ON `comment`.user_id = user.user_id
+		WHERE comment.article_id=#{article_id}
+	</select>
+
+	<insert id="insertComment" parameterType="Comment">
+		INSERT INTO comment(user_id,article_id,user_name,comment_date,comment_content,parent_comment_id) VALUES(#{user_id},#{article_id},#{user_name},#{comment_date},#{comment_content},#{parent_comment_id})
+	</insert>
+</mapper>

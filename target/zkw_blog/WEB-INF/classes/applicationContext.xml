@@ -29,7 +29,9 @@
 		<property name="minPoolSize" value="5" />	<!-- 最小维持的连接数 -->
 		<property name="initialPoolSize" value="${pool.init}" />	<!-- 初始化连接数 -->
 		<property name="maxIdleTime" value="5" />	<!-- 最大等待连接 -->
-	</bean> 
+	</bean>
+
+
 	<bean id="transactionManager" 
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"/>
@@ -107,4 +109,6 @@
 	<mvc:resources mapping="/uploadFiles/userPhoto/**" location="/uploadFiles/userPhoto/" />
 	<mvc:resources mapping="/uploadFiles/atricleImg/**" location="/uploadFiles/atricleImg/" />
 
+	<!--文章代码高亮-->
+	<mvc:resources mapping="/night/**" location="/night/" />
 </beans>

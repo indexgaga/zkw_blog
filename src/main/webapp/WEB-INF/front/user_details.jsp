@@ -64,12 +64,12 @@
                 }else{
                     var user_nickname = this.value;
                     $.ajax({
-                        url : 'updateUserName?user_nickname='+user_nickname,
-                        type : 'put',
-                        dataType : 'json',
+                        url : 'updateUserName',
+                        type : 'POST',
                         data : {
-                            //user_nickname:user_nickname
+                            "user_nickname": user_nickname
                         },
+                        dataType : 'json',
                         success : function (data) {
                             if(data.code == 200){
                                 element.innerHTML = newobj.value;
@@ -88,8 +88,11 @@
         function sex_Edit(){
             var select_sex = $("#user_sex").val();
             $.ajax({
-                url : "updateSex?user_sex="+select_sex,
-                type : "put",
+                url : "updateSex",
+                type : "POST",
+                data : {
+                    user_sex:select_sex
+                },
                 dataType : "json",
                 success : function (data) {
                     if(data.code==200){
@@ -106,8 +109,11 @@
         function birthday_edit(){
             var birthday = $("#user_birthday").val();
             $.ajax({
-                url : "updateBirthday?user_birthday="+birthday,
-                type : "put",
+                url : "updateBirthday",
+                type : "POST",
+                data:{
+                    "user_birthday":birthday
+                },
                 dataType : "json",
                 success : function (data) {
                     if(data.code==200){

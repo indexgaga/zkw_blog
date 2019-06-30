@@ -1,10 +1,12 @@
 package cn.zkw.controller.back;
 
 import cn.zkw.service.ArticleService;
+import cn.zkw.service.CommentService;
 import cn.zkw.service.SortService;
 import cn.zkw.service.UserService;
 import cn.zkw.util.action.AbstractAction;
 import cn.zkw.vo.Article;
+import cn.zkw.vo.Comment;
 import cn.zkw.vo.User;
 import net.sf.json.JSONObject;
 import org.apache.commons.collections.map.HashedMap;
@@ -94,6 +96,7 @@ public class ArticleController extends AbstractAction {
         }
         return jsonObject;
     }
+
 
     @Override
     public String getType() {

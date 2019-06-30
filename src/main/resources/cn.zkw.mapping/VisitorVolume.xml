@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="cn.zkw.mapping.IVisitorVolumeDao">
+	<!--查询全部-->
+	<select id="findAllVisitorVolume" resultType="VisitorVolume">
+		SELECT * FROM visitor_volume;
+	</select>
+	
+</mapper>

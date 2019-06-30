@@ -19,6 +19,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -38,9 +39,15 @@ public class UserController extends AbstractAction {
     @Autowired
     ArticleService articleService;
 
-    @RequestMapping(value = "/updateBirthday",method = RequestMethod.PUT,produces = "application/json;charset=UTF-8")
+    /**
+     * 生日修改
+     * @param user_birthday
+     * @return
+     */
+    @RequestMapping(value = "/updateBirthday",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     public @ResponseBody Object updateBirthdayById(Date user_birthday){
         User user = new User();
+        logger.info("更新生日"+user_birthday);
         user.setUser_name(String.valueOf(SecurityUtils.getSubject().getPrincipal()));
         user.setUser_birthday(user_birthday);
         JSONObject jsonObject = new JSONObject();
@@ -52,8 +59,13 @@ public class UserController extends AbstractAction {
         return jsonObject;
     }
 
-    @RequestMapping(value = "/updateSex", method = RequestMethod.PUT, produces = "application/json;charset=UTF-8")
-    public @ResponseBody Object updateUserSexById(String user_sex){
+    /**
+     * 性别修改
+     * @param user_sex
+     * @return
+     */
+    @RequestMapping(value = "/updateSex", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
+    public @ResponseBody Object updateUserSexById(@RequestParam String user_sex){
         Integer sex = Integer.parseInt(user_sex);
         User user = new User();
         user.setUser_sex(sex);
@@ -72,11 +84,11 @@ public class UserController extends AbstractAction {
      * @param user_nickname
      * @return
      */
-    @RequestMapping(value = "/updateUserName", method = RequestMethod.PUT, produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/updateUserName", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public @ResponseBody Object updateUserName(String user_nickname){
         logger.info("updateUserName-user_name:"+SecurityUtils.getSubject().getPrincipal());
         User user = new User();//new一个user对象传给mybatis
-        logger.info("updateUserName-user_nickname:"+user_nickname);
+        logger.info("修改的用户名:"+user_nickname);
         user.setUser_nickname(user_nickname); //传入要修改的昵称
         user.setUser_name((String)SecurityUtils.getSubject().getPrincipal());  //传入要修改的账号
         JSONObject jsonObject = new JSONObject();//接口数据的返回
@@ -146,6 +158,7 @@ public class UserController extends AbstractAction {
         return modelAndView;
     }
 
+
     /**
      * 登陆注销
      * @param request
@@ -180,7 +193,6 @@ public class UserController extends AbstractAction {
     @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json;charset=UTF-8")
     public @ResponseBody
     Object login(User user, HttpServletRequest request) throws Exception {
-        System.out.println(this.getIp2(request));
         JSONObject json = new JSONObject();
         json.put("code", 200);
         json.put("msg", "登陆成功");
@@ -204,29 +216,6 @@ public class UserController extends AbstractAction {
         return json;
     }
 
-
-    /**
-     * 获取ip
-     * @param request
-     * @return
-     */
-    public String getIp2(HttpServletRequest request) {
-        String ip = request.getHeader("X-Forwarded-For");
-        if (StringUtils.isNotEmpty(ip) && !"unKnown".equalsIgnoreCase(ip)) {
-            //多次反向代理后会有多个ip值，第一个ip才是真实ip
-            int index = ip.indexOf(",");
-            if (index != -1) {
-                return ip.substring(0, index);
-            } else {
-                return ip;
-            }
-        }
-        ip = request.getHeader("X-Real-IP");
-        if (StringUtils.isNotEmpty(ip) && !"unKnown".equalsIgnoreCase(ip)) {
-            return ip;
-        }
-        return request.getRemoteAddr();
-    }
 
     @RequestMapping("userAdd")
     public String userAdd() {

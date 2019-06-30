@@ -15,6 +15,8 @@
 <link rel="apple-touch-icon-precomposed" href="<%=request.getContextPath()%>/back/images/icon/icon.png">
 <link rel="shortcut icon" href="<%=request.getContextPath()%>/back/images/icon/favicon.ico">
 <script src="<%=request.getContextPath()%>/back/js/jquery-2.1.4.min.js"></script>
+  <%--图表--%>
+ <script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
 <!--[if gte IE 9]>
   <script src="<%=request.getContextPath()%>/back/js/jquery-1.11.1.min.js" type="text/javascript"></script>
   <script src="<%=request.getContextPath()%>/back/js/html5shiv.min.js" type="text/javascript"></script>
@@ -75,7 +77,7 @@
       <div class="row placeholders">
         <div class="col-xs-6 col-sm-3 placeholder">
           <h4>文章</h4>
-          <span class="text-muted">0 条</span> </div>
+          <span class="text-muted">14 条</span> </div>
         <div class="col-xs-6 col-sm-3 placeholder">
           <h4>评论</h4>
           <span class="text-muted">0 条</span> </div>
@@ -86,6 +88,10 @@
           <h4>访问量</h4>
           <span class="text-muted">0</span> </div>
       </div>
+
+      <%--图表--%>
+      <div id="container" style="min-width:400px;height:400px"></div>
+
       <h1 class="page-header">状态</h1>
       <div class="table-responsive">
         <table class="table table-striped table-hover">
@@ -307,5 +313,65 @@
 </div>
 <script src="js/bootstrap.min.js"></script> 
 <script src="js/admin-scripts.js"></script>
+<script>
+
+
+  $(function () {
+    var day = new Array();
+    var volume = new Array();
+    $.ajax({
+      url : "${pageContext.request.contextPath}/volume",
+      type : "GET",
+      dataType : "json",
+      success : function (data) {
+
+        day = data.day;
+        volume = data.volume;
+      },
+      error : function (data) {
+
+      }
+    })
+
+
+
+
+    var chart = Highcharts.chart('container', {
+      chart: {
+        type: 'line'
+      },
+      title: {
+        text: '访问量变化'
+      },
+      subtitle: {
+        text: '数据来源: WorldClimate.com'
+      },
+      xAxis: {
+        categories: [day[1],day[2],day[3],day[4],day[5]]
+      },
+      yAxis: {
+        title: {
+          text: '访问量(个)'
+        }
+      },
+      plotOptions: {
+        line: {
+          dataLabels: {
+            // 开启数据标签
+            enabled: true
+          },
+          // 关闭鼠标跟踪，对应的提示框、点击事件会失效
+          enableMouseTracking: true
+        }
+      },
+      series: [{
+        name: '访问量',
+        data: [7.0, 6.9, 9.5, 14.5, 18.4]
+        // data:[volume[1],]
+      }]
+    });
+  })
+
+</script>
 </body>
 </html>
